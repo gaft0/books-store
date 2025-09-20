@@ -239,7 +239,13 @@ h1 {
 }
 
 .down-footer {
+    display: flex;
+    border-top: 1px dashed #EEF2FF;
     height: 7vh;
-    background-color: #000000;
+    background-color:#000000;
+
+    color: #FFFFFF;
+    justify-content: center;
+    padding: 5vh 0 0 0;
 }
 
