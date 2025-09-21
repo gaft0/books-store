@@ -21,6 +21,10 @@ h1 {
     color: #1E1B4B;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .header-container-nav {
     display: flex;
