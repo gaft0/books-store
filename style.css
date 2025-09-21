@@ -238,10 +238,65 @@ h1 {
     margin: 0 0.4vw 0 0.4vw;
 }
 
+.third-section-container {
+    display: flex;
+    height: 65vh;
+}
+
+.favorite-book {
+    height: 53vh;
+    width: auto;
+    margin: 0 0 7vh 5vw;
+}
+
+.third-section-text {
+    color: #1C2024;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 1.5vh 0 0 15vw;
+}
+
+.third-section-title {
+    color: #1C2024;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    margin: 0 0 0 15vw;
+}
+
+.statistics-container {
+    margin: 1vh 0 0 15vw;
+    display: flex;
+}
+
+.statistics {
+    color: #1C2024;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 1vh 4.5vw 0 0;
+}
+
+.statistics-number {
+    color: #1C2024;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+#third-section-button {
+    margin: 5vh 0 0 15vw;
+}
+
 .fourth-section-container {
     display: flex;
     background-color: #FEF9C3;
-    height: 34vh;
+    height: 32vh;
 }
 
 .fourth-section-text {
