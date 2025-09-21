@@ -128,6 +128,112 @@ h1 {
     height: auto;
 }
 
+.second-section-container {
+    height: 66vh;
+}
+
+.second-section-title {
+    margin: 3vh 0 5vh 0;
+    color: #1C2024;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.tape-of-cards-container {
+    display: flex;
+    margin: 0 5vw 0 5vw;
+    width: auto;
+    height: 50vh;
+}
+
+.card-container {
+    margin: 0 3.5vw 0 0;
+    background-color: #EEF2FF;
+    height: 46vh;
+    width: 17vw;
+    border-radius: 12px;
+}
+
+.picture-of-the-card {
+    border-radius: 12px;
+    margin: 2.7vh 1.5vw 0 1.5vw;
+    height: 23vh;
+    width: auto;
+}
+
+.card-text-container {
+    color: #1C2024;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    margin: 0 0 0 1.5vw;
+}
+
+.author {
+    color: #818CF8;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    margin: 0 0.7vw 0 0;
+}
+
+.star-container {
+    margin: 0.1vh 0 0.2vh 0;
+}
+
+.star {
+    margin: 0 -0.1vw 0 -0.1vw;
+}
+
+.description-card {
+    color: #1C2024;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    margin: 0 0 3vh 0;
+}
+
+.black-button {
+    background-color: #000000;
+    height: 4vh;
+    width: 12.5vw;
+    margin: 2.5vh 0 0 0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.black-button-text {
+    color: #FFFFFF;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0 0 0 0.8vw;
+}
+
+.button-scroll-container {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.button-scroll {
+    border-radius: 90px;
+    background: #A5B4FC;
+    width: 0.7vw;
+    height: 1.3vh;
+    margin: 0 0.4vw 0 0.4vw;
+}
+
 .fourth-section-container {
     display: flex;
     background-color: #FEF9C3;
