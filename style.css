@@ -210,6 +210,10 @@ h1 {
     align-items: center;
 }
 
+#three-line-description {
+    margin: 0;
+}
+
 .black-button-text {
     color: #FFFFFF;
     text-align: center;
