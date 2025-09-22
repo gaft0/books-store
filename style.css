@@ -44,7 +44,7 @@ a {
 }
 
 .basket {
-    margin: 0 3vw 0 1vw;
+    margin: 1.3vh 3vw 0 1vw;
     width: 33px;
 }
 
@@ -418,3 +418,184 @@ a {
     padding: 5vh 0 0 0;
 }
 
+.basket-section-container {
+    background-color: #FAFAFA;
+    height: 78vh;
+}   
+
+.basket-section-info-container {
+    margin: 0 5vw 0 5vw;
+    background-color: #FAFAFA;
+    height: 40vh;
+    width: auto;
+}
+
+.basket-title-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.basket-title {
+    color: #18181B;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.basket-text {
+    color: #71717A;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.basket-carts-and-order-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5vh 0 0 0;
+    height: 32vh;
+    background-color: #FAFAFA;
+}
+
+.basket-cart-container {
+    display: flex;
+    background-color: #FFFFFF;
+    height: 15vh;
+    width: 59vw;
+    margin: 0 0 1vh 0;
+    border-radius: 8px;
+}
+
+.basket-order-container {
+    background-color: #FFFFFF;
+    height: 35vh;
+    width: 28.5vw;
+    border-radius: 8px;
+}
+
+.basket-order-title {
+    color: #1C2024;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    margin: 4vh 0 1.5vh 1vw;
+}
+
+.basket-order-subtotal-and-shipping {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1vw 0.7vh 1vw;
+}
+
+.basket-order-subtotal-and-shipping-text {
+    color: #3F3F46;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.basket-order-subtotal-and-shipping-cash {
+    color: #18181B;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.basket-order-promotion {
+    color: #71717A;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 1.5vh 1vw 1.3vh 1vw;
+}
+
+.basket-order-line-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.basket-order-line {
+    background-color: #1C2024;
+    height: 0.2vh;
+    width: 93%;
+}
+
+.basket-order-total {
+    display: flex;
+    justify-content: space-between;
+    color: #1C2024;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    margin: 1.7vh 1vw 0vh 1vw;
+}
+
+.basket-order-button-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.basket-order-button {
+    background-color: #18181B;
+    color: #FFFFFF;
+    text-align: center;
+    align-content: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    height: 4vh;
+    width: 93%;
+    border-radius: 8px;
+    margin: 1.3vh 0vw 0vh 0vw;
+}
+
+#basket-picture-of-the-card {
+    height: 75%;
+    width: 8%;
+    margin: 2vh 0 0 1vw;
+}
+
+#basket-card-name {
+    color: #18181B;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 3vh 0 0 1vw;
+}
+
+#basket-author {
+    color: #71717A;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19.5px;
+}
+
+.cash-and-urn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0 -7vw;
+}
+
+.cash {
+    color: #18181B;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.urn {
+    margin: 2vh 0 0 0;
+    height: 25%;
+    width: auto;
+}
