@@ -11,6 +11,10 @@ li {
     list-style: none;
 }
 
+input {
+    border: none;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -109,13 +113,14 @@ button {
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
-    margin: 0.8vh 6vw 0.4vh 0;
+    outline: none;
+    width: 90%;
 }
 
 .ellipsis {
     height: 16px;
     width: 16px;
-    margin: 1.3vh 0 1.3vh 4.5vw;
+    margin: 1.3vh 1vw 1.3vh 0;
 }
 
 .fan-of-picture-container {
