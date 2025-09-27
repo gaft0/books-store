@@ -13,13 +13,15 @@
         <div class="header-container-nav">
             <nav>
                 <ul class="header-nav">
-                    <li class="header-list-element"><a href="index.html">HOME</a></li>
-                    <li class="header-list-element"><a href="explore.html">EXPLORE</a></li>
-                    <li class="header-list-element"><a href="shop.html">SHOP</a></li>
-                    <li class="header-list-element"><a href="sell.html">SELL YOUR BOOK</a></li>
+                    <li class="header-list-element"><button class="header-button" onclick="location.href='index.html'">HOME</button></li>
+                    <li class="header-list-element"><button class="header-button" onclick="location.href='explore.html'">EXPLORE</button></li>
+                    <li class="header-list-element"><button class="header-button">SHOP</button></li>
+                    <li class="header-list-element"><button class="header-button">SELL YOUR BOOK</button></li>
                 </ul>
-            </nav>
-            <a href="basket.html"><img src="assets/basket.svg" alt="Your basket" class="basket"></a>
+            </nav>  
+            <div class="basket-icon-container">
+                <button class="header-button" onclick="location.href='basket.html'"><img src="assets/basket.svg" alt="Your basket" class="basket-icon"></button>
+            </div>
         </div>
     </header>
     <main>
