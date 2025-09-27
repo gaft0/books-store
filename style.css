@@ -443,10 +443,19 @@ button {
 }
 
 .footer-list {
-    margin: 1.2vh 0.5vw;
+    margin: 1.2vh 0;
+}
+
+.button-footer {
+    color: #FFFFFF;
     font-size: 14px;
     line-height: 21px;
     font-weight: 400;
+    transition: color 0.2s linear;
+}
+
+.button-footer:hover {
+    color:#4F46E5
 }
 
 .down-footer {
