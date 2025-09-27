@@ -37,7 +37,6 @@ h1 {
     font-size: 16px;
     border-bottom: 3px solid transparent;
     transition: border-bottom-color 0.2s linear, border-bottom-width 0.2s linear;
-
 }
 
 .header-button:hover {
@@ -120,7 +119,12 @@ button {
 .ellipsis {
     height: 16px;
     width: 16px;
-    margin: 1.3vh 1vw 1.3vh 0;
+    margin: 1.3vh 0.5vw 1.3vh 0;
+    transition: transform 0.2s linear;
+}
+
+.ellipsis:hover {
+    transform: scale(1.5);
 }
 
 .fan-of-picture-container {
@@ -182,7 +186,12 @@ button {
     background-color: #EEF2FF;
     height: 46vh;
     width: 15.5vw;
-    border-radius: 12px;
+    border-radius: 12px;    
+    transition: transform 0.2s linear;
+}
+
+.card-container:hover {
+    transform: scale(1.1);
 }
 
 .picture-of-the-card {
@@ -347,7 +356,6 @@ button {
     width: 8.5vw;
     margin: 0 0 0 5vw;
     border-radius: 4px;
-
     color:#FFFFFF;
     text-align: center;
     align-content: center;
@@ -355,6 +363,11 @@ button {
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
+    transition: background-color 0.2s linear;
+}
+
+.fourth-section-button:hover {
+    background-color: #18181B;
 }
 
 .award {
@@ -584,6 +597,13 @@ button {
     width: 93%;
     border-radius: 8px;
     margin: 1.3vh 0vw 0vh 0vw;
+    transition: background-color linear 0.2s, color linear 0.2s, border linear 0.2s;
+}
+
+.basket-order-button:hover {
+    border: #18181B solid 2px;
+    background-color: #FFFFFF;
+    color: #18181B;
 }
 
 #basket-picture-of-the-card {
@@ -627,4 +647,9 @@ button {
     margin: 2vh 0 0 0;
     height: 25%;
     width: auto;
+    transition: transform 0.2s linear;
+}
+
+.urn:hover {
+    transform: scale(1.1);
 }
