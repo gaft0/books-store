@@ -1,79 +1,88 @@
-.footer-container {
+footer {
     background-color: #000000;
-    height: 35vh;
-    padding: 1vh 5vw 2vh 5vw;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0.8rem 3.95rem;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .up-footer {
     display: flex;
-    height: 22vh;
+    justify-content: space-between;
     background-color: #000000;
-    margin: 0 0 1.5vh 0;
+    margin: 2.5rem 0 1.25rem 0;
 }
 
 .footer-first-section {
     color: #FFFFFF;
-    margin: 4.5vh 0 0 2.3vw;
+    width: 16rem;
+    margin: 0 0 0 1.25rem;
 }
 
 .footer-second-section {
     color: #FFFFFF;
-    margin: 4.5vh 0 0 1vw;
+    width: 16rem;
+    margin: 0 0 0 1.1rem;
 }
 
 .footer-third-section {
-    margin: 4.5vh 0 0 11vw;
+    margin: 0 0 0 8.62rem;
+    width: 20rem;
     color: #FFFFFF;
 }
 
 .footer-fourth-section {
-    margin: 4.5vh 0 0 14vw;
+    margin: 0 0 0 6.93rem;
+    width: 10rem;
     color: #FFFFFF;
 }
 
 .footer-first-section-title {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 36px;
+    line-height: 2rem;
 }
 
 .footer-first-section-text {
-    font-size: 14px;
+    font-size: 0.87rem;
     font-weight: 400;
-    line-height: 22.4px;
-    margin: 1vh 0 0 0;
+    line-height: 1.4rem;
+    margin: 0.8rem 0 0 0;
 }
 
 .footer-second-section-title {
-    font-size: 19.2px;
+    font-size: 1.2rem;
     font-weight: 700;
-    line-height: 28.8px;
-    margin: 0 0 0 3.4vh;
+    line-height: 1.8rem;
+    margin: 0 0 0 1.5rem;
 }
 
 .footer-third-section-title {
-    font-size: 19.2px;
+    font-size: 1.2rem;
     font-weight: 700;
-    line-height: 28.8px;
-    margin: 0 0 0 5.6vh;
+    line-height: 1.8rem;
+    margin: 0 0 0 3.15rem;
 }
 
 .footer-fourth-section-title {
-    font-size: 19.2px;
+    font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
-    line-height: 28.8px;
+    line-height: 1.8rem;
 }
 
 .footer-list {
-    margin: 1.2vh 0;
+    margin: 0.67rem 0;
 }
 
 .button-footer {
     color: #FFFFFF;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 0.87rem;
+    line-height: 1.31rem;
     font-weight: 400;
     transition: color 0.2s linear;
 }
@@ -85,9 +94,8 @@
 .down-footer {
     display: flex;
     border-top: 1px dashed #EEF2FF;
-    height: 7vh;
     background-color:#000000;
     color: #FFFFFF;
     justify-content: center;
-    padding: 5vh 0 0 0;
+    padding: 2.31rem 0;
 }
