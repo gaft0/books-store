@@ -1,14 +1,22 @@
 header {
+    background-color: #E4E4E7;    
+    width: 100%;
+}
+
+.header-container {
+    max-width: 1920px;    
+    margin: 0 auto;
+    padding: 0;
     display: flex;
     justify-content: space-between;
-    background-color: #E4E4E7;
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
-    margin: 3vh 0 3vh 5vw;
+    margin: 0 0 0 3.95rem;
+    padding: 1.75rem 0 0 0;
     color: #1E1B4B;
 }
 
@@ -17,7 +25,7 @@ h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     color: #1E1B4B;
-    font-size: 16px;
+    font-size: 1rem;
     border-bottom: 3px solid transparent;
     transition: border-bottom-color 0.2s linear, border-bottom-width 0.2s linear;
 }
@@ -28,7 +36,7 @@ h1 {
 
 .header-container-nav {
     display: flex;
-    margin: 2vh 1vw 2vh 0;
+    padding: 0.95rem 0 0 0;
 }
 
 .header-nav {
