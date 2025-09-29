@@ -11,58 +11,224 @@
     <title>Books Store | gaft0</title>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Books</h1>
-            <div class="header-container-nav">
-                <nav>
-                    <ul class="header-nav">
-                        <li class="header-list-element"><button class="header-button" onclick="location.href='index.html'">HOME</button></li>
-                        <li class="header-list-element"><button class="header-button" onclick="location.href='explore.html'">EXPLORE</button></li>
-                        <li class="header-list-element"><button class="header-button">SHOP</button></li>
-                        <li class="header-list-element"><button class="header-button">SELL YOUR BOOK</button></li>
-                    </ul>
-                </nav>
-                <div class="basket-icon-container">
-                    <button class="header-button" onclick="location.href='basket.html'"><img src="assets/basket.svg" alt="Your basket" class="basket-icon"></button>
+    <div style="display: flex; flex-direction: column; min-height: 100vh;">
+        <header>
+            <div class="header-container">
+                <h1>Books</h1>
+                <div class="header-container-nav">
+                    <nav>
+                        <ul class="header-nav">
+                            <li class="header-list-element"><button class="header-button" onclick="location.href='index.html'">HOME</button></li>
+                            <li class="header-list-element"><button class="header-button" onclick="location.href='explore.html'">EXPLORE</button></li>
+                            <li class="header-list-element"><button class="header-button">SHOP</button></li>
+                            <li class="header-list-element"><button class="header-button">SELL YOUR BOOK</button></li>
+                        </ul>
+                    </nav>
+                    <div class="basket-icon-container">
+                        <button class="header-button" onclick="location.href='basket.html'"><img src="assets/basket.svg" alt="Your basket" class="basket-icon"></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <section class="first-section">
-            <div class="first-section-container">
-                <div>
+        </header>
+        <main>
+            <section class="first-section">
+                <div class="first-section-container">
                     <div>
-                        <h2 class="title">Buy and sell your<br>books <span style="color: #6366F1">for the best<br>prices</span></h2>
-                        <h3 class="first-section-text">Find and read more your'll love, and keep track of the books you want to read.<br>Be part of the word's largeest community of book lovers on Goodreads.</h3>
+                        <div>
+                            <h2 class="title">Buy and sell your<br>books <span style="color: #6366F1">for the best<br>prices</span></h2>
+                            <h3 class="first-section-text">Find and read more your'll love, and keep track of the books you want to read.<br>Be part of the word's largeest community of book lovers on Goodreads.</h3>
+                        </div>
+                        <div class="search-container">
+                            <img src="assets/magnifer.svg" alt="Magnifer" class="magnifer">
+                            <input class="search-container-text" type="text" placeholder="Search for Books...">
+                            <button><img src="assets/ellipsis.svg" alt="Ellipsis" class="ellipsis"></button>
+                        </div>
                     </div>
-                    <div class="search-container">
-                        <img src="assets/magnifer.svg" alt="Magnifer" class="magnifer">
-                        <input class="search-container-text" type="text" placeholder="Search for Books...">
-                        <button><img src="assets/ellipsis.svg" alt="Ellipsis" class="ellipsis"></button>
+                    <div class="fan-of-picture-container">
+                        <img src="assets/slide4.png.png" alt="Slide 4" class="fan-of-picture" id="Slide-4">
+                        <img src="assets/slide3.png.png" alt="Slide 3" class="fan-of-picture" id="Slide-3">
+                        <img src="assets/slide2.png.png" alt="Slide 2" class="fan-of-picture" id="Slide-2">
+                        <img src="assets/slide1.png.png" alt="Slide 1" class="fan-of-picture">
                     </div>
                 </div>
-                <div class="fan-of-picture-container">
-                    <img src="assets/slide4.png.png" alt="Slide 4" class="fan-of-picture" id="Slide-4">
-                    <img src="assets/slide3.png.png" alt="Slide 3" class="fan-of-picture" id="Slide-3">
-                    <img src="assets/slide2.png.png" alt="Slide 2" class="fan-of-picture" id="Slide-2">
-                    <img src="assets/slide1.png.png" alt="Slide 1" class="fan-of-picture">
+            </section>
+            <section class="second-section">
+                <div class="second-section-container">
+                    <div class="second-section-title">Best Seller Books</div>
+                    <ul class="tape-of-cards-container">
+                        <li>
+                            <div class="card-container">
+                                <img src="assets/Cooking Made Easy.png" alt="Picture of the card" class="picture-of-the-card">
+                                <div class="card-text-container">
+                                    <span>Cooking Made Easy</span>
+                                    <div>
+                                        <div style="display: flex;">
+                                            <span class="author">Emily Clark •</span>
+                                            <div class="star-container">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/gray-star.svg" class="star">
+                                            </div>
+                                        </div>
+                                        <span class="description-card">Simple and delicious recipes for<br>everyday cooking.</span>
+                                        <button class="black-button">
+                                            <img src="assets/card-basket.svg">
+                                            <span class="black-button-text">Add To Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>  
+                        <li>
+                            <div class="card-container">
+                                <img src="assets/Mystery of the Lost Island.png" alt="Picture of the card" class="picture-of-the-card">
+                                <div class="card-text-container">
+                                    <span>Mystery of the Lost Island</span>
+                                    <div>
+                                        <div style="display: flex;">
+                                            <span class="author">Jane Smith •</span>
+                                            <div class="star-container">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/gray-star.svg" class="star">
+                                                <img src="assets/gray-star.svg" class="star">
+                                            </div>
+                                        </div>
+                                        <span class="description-card">A gripping mystery novel that keeps<br>you guessing till the end.</span>
+                                        <button class="black-button">
+                                            <img src="assets/card-basket.svg">
+                                            <span class="black-button-text">Add To Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card-container">
+                                <img src="assets/Shadows of Doubt.png" alt="Picture of the card" class="picture-of-the-card">
+                                <div class="card-text-container">
+                                    <span>Shadows of Doubt</span>
+                                    <div>
+                                        <div style="display: flex;">
+                                            <span class="author">Emma Watson •</span>
+                                            <div class="star-container">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/gray-star.svg" class="star">
+                                                <img src="assets/gray-star.svg" class="star">
+                                            </div>
+                                        </div>
+                                        <span class="description-card">A detective novel filled with twists<br>and unexpected turns.</span>
+                                        <button class="black-button">
+                                            <img src="assets/card-basket.svg">
+                                            <span class="black-button-text">Add To Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card-container">
+                                <img src="assets/Taste of Italy.png" alt="Picture of the card" class="picture-of-the-card">
+                                <div class="card-text-container">
+                                    <span>Taste of Italy</span>
+                                    <div style="display: flex;">
+                                        <span class="author">Gina Rossi •</span>
+                                        <div class="star-container">
+                                            <img src="assets/green-star.svg" class="star">
+                                            <img src="assets/green-star.svg" class="star">
+                                            <img src="assets/green-star.svg" class="star">
+                                            <img src="assets/green-star.svg" class="star">
+                                            <img src="assets/gray-star.svg" class="star">
+                                        </div>
+                                    </div>
+                                    <span class="description-card">Authentic Italian recipes to bring the<br>flavors of Italy home.</span>
+                                    <button class="black-button">
+                                        <img src="assets/card-basket.svg">
+                                        <span class="black-button-text">Add To Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card-container">
+                                <img src="assets/Echoes of the Past.png" alt="Picture of the card" class="picture-of-the-card">
+                                <div class="card-text-container">
+                                    <span>Echoes of the Past</span>
+                                    <div>
+                                        <div style="display: flex;">
+                                            <span class="author">Michael Brown •</span>
+                                            <div class="star-container">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                                <img src="assets/green-star.svg" class="star">
+                                            </div>
+                                        </div>
+                                        <span class="description-card">A historical tale unraveling secrets<br>buried in time.</span>
+                                        <button class="black-button">
+                                            <img src="assets/card-basket.svg">
+                                            <span class="black-button-text">Add To Cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="button-scroll-container">
+                        <div class="button-scroll"></div>
+                        <div class="button-scroll"></div>
+                        <div class="button-scroll"></div>
+                        <div class="button-scroll"></div>
+                        <div class="button-scroll"></div>
+                        <div class="button-scroll"></div>
+                        <div class="button-scroll"></div>
+                        <div class="button-scroll"></div>
+                        <div class="button-scroll"></div>
+                        <div class="button-scroll"></div>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="second-section">
-            <div class="second-section-container">
-                <div class="second-section-title">Best Seller Books</div>
+            </section>
+            <section class="third-section">
+                <div class="third-section-container">
+                    <img src="assets/favorite-book.png" alt="Favorite Books" class="favorite-book">
+                    <div class="third-section-text-container">
+                        <div class="third-section-title">Find Your favorite<br><span style="color: #6366F1;">Book Here!</span></div>
+                        <div class="third-section-text">Lorem ipsum dolor sit, amet consectetur adipisicing<br>elit. Quo ad non reprehenderit. Reiciendis illo iusto<br>incidunt distinctio exercitationem officiis dicta dolores<br>dolorem ea! Non saepe, voluptatum cupiditate beatae<br>in dolore!</div>
+                        <div class="statistics-container">
+                            <div class="statistics"><span class="statistics-number">800+</span><br>Book Listing</div>
+                            <div class="statistics"><span class="statistics-number">550+</span><br>Register User</div>
+                            <div class="statistics"><span class="statistics-number">1,200+</span><br>Books Sold</div>
+                        </div>
+                        <div class="fourth-section-button" id="third-section-button">Explore Now</div>
+                    </div>
+                </div>
+            </section>
+            <section class="fourth-section">
+                <div class="fourth-section-container">
+                    <div>
+                        <h2 class="fourth-section-text">2025 National Book Awards for Fiction Shortlist</h2>
+                        <div class="fourth-section-button">Explore Now</div>
+                    </div>
+                    <img src="assets/award.png" alt="Award" class="award">
+                </div>
+            </section>
+            <section class="second-section-container">
+                <div class="second-section-title">New Releases</div>
                 <ul class="tape-of-cards-container">
                     <li>
                         <div class="card-container">
-                            <img src="assets/Cooking Made Easy.png" alt="Picture of the card" class="picture-of-the-card">
+                            <img src="assets/The Lost Expedition.png" alt="Picture of the card" class="picture-of-the-card">
                             <div class="card-text-container">
-                                <span>Cooking Made Easy</span>
+                                <span>The Lost Expedition</span>
                                 <div>
                                     <div style="display: flex;">
-                                        <span class="author">Emily Clark •</span>
+                                        <span class="author">Tom Hardy •</span>
                                         <div class="star-container">
                                             <img src="assets/green-star.svg" class="star">
                                             <img src="assets/green-star.svg" class="star">
@@ -71,57 +237,7 @@
                                             <img src="assets/gray-star.svg" class="star">
                                         </div>
                                     </div>
-                                    <span class="description-card">Simple and delicious recipes for<br>everyday cooking.</span>
-                                    <button class="black-button">
-                                        <img src="assets/card-basket.svg">
-                                        <span class="black-button-text">Add To Cart</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>  
-                    <li>
-                        <div class="card-container">
-                            <img src="assets/Mystery of the Lost Island.png" alt="Picture of the card" class="picture-of-the-card">
-                            <div class="card-text-container">
-                                <span>Mystery of the Lost Island</span>
-                                <div>
-                                    <div style="display: flex;">
-                                        <span class="author">Jane Smith •</span>
-                                        <div class="star-container">
-                                            <img src="assets/green-star.svg" class="star">
-                                            <img src="assets/green-star.svg" class="star">
-                                            <img src="assets/green-star.svg" class="star">
-                                            <img src="assets/gray-star.svg" class="star">
-                                            <img src="assets/gray-star.svg" class="star">
-                                        </div>
-                                    </div>
-                                    <span class="description-card">A gripping mystery novel that keeps<br>you guessing till the end.</span>
-                                    <button class="black-button">
-                                        <img src="assets/card-basket.svg">
-                                        <span class="black-button-text">Add To Cart</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card-container">
-                            <img src="assets/Shadows of Doubt.png" alt="Picture of the card" class="picture-of-the-card">
-                            <div class="card-text-container">
-                                <span>Shadows of Doubt</span>
-                                <div>
-                                    <div style="display: flex;">
-                                        <span class="author">Emma Watson •</span>
-                                        <div class="star-container">
-                                            <img src="assets/green-star.svg" class="star">
-                                            <img src="assets/green-star.svg" class="star">
-                                            <img src="assets/green-star.svg" class="star">
-                                            <img src="assets/gray-star.svg" class="star">
-                                            <img src="assets/gray-star.svg" class="star">
-                                        </div>
-                                    </div>
-                                    <span class="description-card">A detective novel filled with twists<br>and unexpected turns.</span>
+                                    <span class="description-card">An adventurer’s perilous quest in<br>the Amazon jungle.</span>
                                     <button class="black-button">
                                         <img src="assets/card-basket.svg">
                                         <span class="black-button-text">Add To Cart</span>
@@ -155,12 +271,12 @@
                     </li>
                     <li>
                         <div class="card-container">
-                            <img src="assets/Echoes of the Past.png" alt="Picture of the card" class="picture-of-the-card">
+                            <img src="assets/Learning React.png" alt="Picture of the card" class="picture-of-the-card">
                             <div class="card-text-container">
-                                <span>Echoes of the Past</span>
+                                <span>Learning React</span>
                                 <div>
                                     <div style="display: flex;">
-                                        <span class="author">Michael Brown •</span>
+                                        <span class="author">Alex Johnson •</span>
                                         <div class="star-container">
                                             <img src="assets/green-star.svg" class="star">
                                             <img src="assets/green-star.svg" class="star">
@@ -169,7 +285,55 @@
                                             <img src="assets/green-star.svg" class="star">
                                         </div>
                                     </div>
-                                    <span class="description-card">A historical tale unraveling secrets<br>buried in time.</span>
+                                    <span class="description-card">A comprehensive guide to<br>mastering React.js and modern web<br>development.</span>
+                                    <button class="black-button" id="three-line-description">
+                                        <img src="assets/card-basket.svg">
+                                        <span class="black-button-text">Add To Cart</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card-container">
+                            <img src="assets/The Silent Forest.png" alt="Picture of the card" class="picture-of-the-card">
+                            <div class="card-text-container">
+                                <span>The Silent Forest</span>
+                                <div style="display: flex;">
+                                    <span class="author">David Kim •</span>
+                                    <div class="star-container">
+                                        <img src="assets/green-star.svg" class="star">
+                                        <img src="assets/green-star.svg" class="star">
+                                        <img src="assets/green-star.svg" class="star">
+                                        <img src="assets/gray-star.svg" class="star">
+                                        <img src="assets/gray-star.svg" class="star">
+                                    </div>
+                                </div>
+                                <span class="description-card">A chilling suspense story set in a<br>haunted woodland.</span>
+                                <button class="black-button">
+                                    <img src="assets/card-basket.svg">
+                                    <span class="black-button-text">Add To Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card-container">
+                            <img src="assets/Mystery of the Lost Island.png" alt="Picture of the card" class="picture-of-the-card">
+                            <div class="card-text-container">
+                                <span>Mystery of the Lost Island</span>
+                                <div>
+                                    <div style="display: flex;">
+                                        <span class="author">Jane Smith •</span>
+                                        <div class="star-container">
+                                            <img src="assets/green-star.svg" class="star">
+                                            <img src="assets/green-star.svg" class="star">
+                                            <img src="assets/green-star.svg" class="star">
+                                            <img src="assets/gray-star.svg" class="star">
+                                            <img src="assets/gray-star.svg" class="star">
+                                        </div>
+                                    </div>
+                                    <span class="description-card">A gripping mystery novel that keeps<br>you guessing till the end.</span>
                                     <button class="black-button">
                                         <img src="assets/card-basket.svg">
                                         <span class="black-button-text">Add To Cart</span>
@@ -191,209 +355,47 @@
                     <div class="button-scroll"></div>
                     <div class="button-scroll"></div>
                 </div>
-            </div>
-        </section>
-        <section class="third-section">
-            <div class="third-section-container">
-                <img src="assets/favorite-book.png" alt="Favorite Books" class="favorite-book">
-                <div class="third-section-text-container">
-                    <div class="third-section-title">Find Your favorite<br><span style="color: #6366F1;">Book Here!</span></div>
-                    <div class="third-section-text">Lorem ipsum dolor sit, amet consectetur adipisicing<br>elit. Quo ad non reprehenderit. Reiciendis illo iusto<br>incidunt distinctio exercitationem officiis dicta dolores<br>dolorem ea! Non saepe, voluptatum cupiditate beatae<br>in dolore!</div>
-                    <div class="statistics-container">
-                        <div class="statistics"><span class="statistics-number">800+</span><br>Book Listing</div>
-                        <div class="statistics"><span class="statistics-number">550+</span><br>Register User</div>
-                        <div class="statistics"><span class="statistics-number">1,200+</span><br>Books Sold</div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="up-footer">
+                    <div class="footer-first-section">
+                        <h2 class="footer-first-section-title">Books</h2>
+                        <h3 class="footer-first-section-text">Books Delivered. Imagination Unlimited.</h3>
                     </div>
-                    <div class="fourth-section-button" id="third-section-button">Explore Now</div>
+                    <div class="footer-second-section">
+                        <h2 class="footer-second-section-title">Quick Links</h2>
+                        <ul style="list-style: none; margin: 0 0 0 -1.2rem;">
+                            <li class="footer-list"><button class="button-footer">Home</button></li>
+                            <li class="footer-list"><button class="button-footer">About Us</button></li>
+                            <li class="footer-list"><button class="button-footer">Contact</button></li>
+                        </ul>
+                    </div>
+                    <div class="footer-third-section">
+                        <h2 class="footer-third-section-title">Contact</h2>
+                        <ul style="list-style: none;">
+                            <li class="footer-list"><button class="button-footer" onclick="window.location.href='mailto:mssonukr@gmail.com'">Email: mssonukr@gmail.com</button></li>
+                            <li class="footer-list"><button class="button-footer" onclick="window.location.href='tel:+917061543815'">Phone: +91 7061543815</button></li>
+                            <li class="footer-list"><button class="button-footer" onclick="window.location.href='https://yandex.by/maps/geo/mullana/2239366727/?ll=140.890337%2C-36.878508&source=serp_navig&z=17.1'">
+                                MMEC, Mullana - 133207</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-fourth-section">
+                        <h2 class="footer-fourth-section-title">We Accept</h2>
+                        <ul style="list-style: none; display: flex; margin: 0 0 0 -3rem;">
+                            <li class="footer-list"><img src="assets/visa.png" alt="Logo Visa"></li>
+                            <li class="footer-list"><img src="assets/mastercard.png" alt="Logo Mastercard"></li>
+                            <li class="footer-list"><img src="assets/american-express.png" alt="Logo American Express"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="down-footer">
+                    © 2025 Books. All rights reserved. | Made By Sonu ❤
                 </div>
             </div>
-        </section>
-        <section class="fourth-section">
-            <div class="fourth-section-container">
-                <div>
-                    <h2 class="fourth-section-text">2025 National Book Awards for Fiction Shortlist</h2>
-                    <div class="fourth-section-button">Explore Now</div>
-                </div>
-                <img src="assets/award.png" alt="Award" class="award">
-            </div>
-        </section>
-        <section class="second-section-container">
-            <div class="second-section-title">New Releases</div>
-            <ul class="tape-of-cards-container">
-                <li>
-                    <div class="card-container">
-                        <img src="assets/The Lost Expedition.png" alt="Picture of the card" class="picture-of-the-card">
-                        <div class="card-text-container">
-                            <span>The Lost Expedition</span>
-                            <div>
-                                <div style="display: flex;">
-                                    <span class="author">Tom Hardy •</span>
-                                    <div class="star-container">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/gray-star.svg" class="star">
-                                    </div>
-                                </div>
-                                <span class="description-card">An adventurer’s perilous quest in<br>the Amazon jungle.</span>
-                                <button class="black-button">
-                                    <img src="assets/card-basket.svg">
-                                    <span class="black-button-text">Add To Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card-container">
-                        <img src="assets/Taste of Italy.png" alt="Picture of the card" class="picture-of-the-card">
-                        <div class="card-text-container">
-                            <span>Taste of Italy</span>
-                            <div style="display: flex;">
-                                <span class="author">Gina Rossi •</span>
-                                <div class="star-container">
-                                    <img src="assets/green-star.svg" class="star">
-                                    <img src="assets/green-star.svg" class="star">
-                                    <img src="assets/green-star.svg" class="star">
-                                    <img src="assets/green-star.svg" class="star">
-                                    <img src="assets/gray-star.svg" class="star">
-                                </div>
-                            </div>
-                            <span class="description-card">Authentic Italian recipes to bring the<br>flavors of Italy home.</span>
-                            <button class="black-button">
-                                <img src="assets/card-basket.svg">
-                                <span class="black-button-text">Add To Cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card-container">
-                        <img src="assets/Learning React.png" alt="Picture of the card" class="picture-of-the-card">
-                        <div class="card-text-container">
-                            <span>Learning React</span>
-                            <div>
-                                <div style="display: flex;">
-                                    <span class="author">Alex Johnson •</span>
-                                    <div class="star-container">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/green-star.svg" class="star">
-                                    </div>
-                                </div>
-                                <span class="description-card">A comprehensive guide to<br>mastering React.js and modern web<br>development.</span>
-                                <button class="black-button" id="three-line-description">
-                                    <img src="assets/card-basket.svg">
-                                    <span class="black-button-text">Add To Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card-container">
-                        <img src="assets/The Silent Forest.png" alt="Picture of the card" class="picture-of-the-card">
-                        <div class="card-text-container">
-                            <span>The Silent Forest</span>
-                            <div style="display: flex;">
-                                <span class="author">David Kim •</span>
-                                <div class="star-container">
-                                    <img src="assets/green-star.svg" class="star">
-                                    <img src="assets/green-star.svg" class="star">
-                                    <img src="assets/green-star.svg" class="star">
-                                    <img src="assets/gray-star.svg" class="star">
-                                    <img src="assets/gray-star.svg" class="star">
-                                </div>
-                            </div>
-                            <span class="description-card">A chilling suspense story set in a<br>haunted woodland.</span>
-                            <button class="black-button">
-                                <img src="assets/card-basket.svg">
-                                <span class="black-button-text">Add To Cart</span>
-                            </button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card-container">
-                        <img src="assets/Mystery of the Lost Island.png" alt="Picture of the card" class="picture-of-the-card">
-                        <div class="card-text-container">
-                            <span>Mystery of the Lost Island</span>
-                            <div>
-                                <div style="display: flex;">
-                                    <span class="author">Jane Smith •</span>
-                                    <div class="star-container">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/green-star.svg" class="star">
-                                        <img src="assets/gray-star.svg" class="star">
-                                        <img src="assets/gray-star.svg" class="star">
-                                    </div>
-                                </div>
-                                <span class="description-card">A gripping mystery novel that keeps<br>you guessing till the end.</span>
-                                <button class="black-button">
-                                    <img src="assets/card-basket.svg">
-                                    <span class="black-button-text">Add To Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <div class="button-scroll-container">
-                <div class="button-scroll"></div>
-                <div class="button-scroll"></div>
-                <div class="button-scroll"></div>
-                <div class="button-scroll"></div>
-                <div class="button-scroll"></div>
-                <div class="button-scroll"></div>
-                <div class="button-scroll"></div>
-                <div class="button-scroll"></div>
-                <div class="button-scroll"></div>
-                <div class="button-scroll"></div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-container">
-            <div class="up-footer">
-                <div class="footer-first-section">
-                    <h2 class="footer-first-section-title">Books</h2>
-                    <h3 class="footer-first-section-text">Books Delivered. Imagination Unlimited.</h3>
-                </div>
-                <div class="footer-second-section">
-                    <h2 class="footer-second-section-title">Quick Links</h2>
-                    <ul style="list-style: none; margin: 0 0 0 -1.2rem;">
-                        <li class="footer-list"><button class="button-footer">Home</button></li>
-                        <li class="footer-list"><button class="button-footer">About Us</button></li>
-                        <li class="footer-list"><button class="button-footer">Contact</button></li>
-                    </ul>
-                </div>
-                <div class="footer-third-section">
-                    <h2 class="footer-third-section-title">Contact</h2>
-                    <ul style="list-style: none;">
-                        <li class="footer-list"><button class="button-footer" onclick="window.location.href='mailto:mssonukr@gmail.com'">Email: mssonukr@gmail.com</button></li>
-                        <li class="footer-list"><button class="button-footer" onclick="window.location.href='tel:+917061543815'">Phone: +91 7061543815</button></li>
-                        <li class="footer-list"><button class="button-footer" onclick="window.location.href='https://yandex.by/maps/geo/mullana/2239366727/?ll=140.890337%2C-36.878508&source=serp_navig&z=17.1'">
-                            MMEC, Mullana - 133207</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-fourth-section">
-                    <h2 class="footer-fourth-section-title">We Accept</h2>
-                    <ul style="list-style: none; display: flex; margin: 0 0 0 -3rem;">
-                        <li class="footer-list"><img src="assets/visa.png" alt="Logo Visa"></li>
-                        <li class="footer-list"><img src="assets/mastercard.png" alt="Logo Mastercard"></li>
-                        <li class="footer-list"><img src="assets/american-express.png" alt="Logo American Express"></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="down-footer">
-                © 2025 Books. All rights reserved. | Made By Sonu ❤
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>

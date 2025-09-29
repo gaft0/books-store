@@ -11,144 +11,146 @@
     <title>Books Store | gaft0</title>
 </head>
 <body>
-    <header style="background-color: #FAFAFA;">
-        <div class="header-container">
-            <h1>Books</h1>
-            <div class="header-container-nav">
-                <nav>
-                    <ul class="header-nav">
-                        <li class="header-list-element"><button class="header-button" onclick="location.href='index.html'">HOME</button></li>
-                        <li class="header-list-element"><button class="header-button" onclick="location.href='explore.html'">EXPLORE</button></li>
-                        <li class="header-list-element"><button class="header-button">SHOP</button></li>
-                        <li class="header-list-element"><button class="header-button">SELL YOUR BOOK</button></li>
-                    </ul>
-                </nav>
-                <div class="basket-icon-container">
-                    <button class="header-button" onclick="location.href='basket.html'"><img src="assets/basket.svg" alt="Your basket" class="basket-icon"></button>
+    <div style="display: flex;flex-direction: column;min-height: 100vh; background-color: #FAFAFA;">
+        <header style="background-color: #FAFAFA;">
+            <div class="header-container">
+                <h1>Books</h1>
+                <div class="header-container-nav">
+                    <nav>
+                        <ul class="header-nav">
+                            <li class="header-list-element"><button class="header-button" onclick="location.href='index.html'">HOME</button></li>
+                            <li class="header-list-element"><button class="header-button" onclick="location.href='explore.html'">EXPLORE</button></li>
+                            <li class="header-list-element"><button class="header-button">SHOP</button></li>
+                            <li class="header-list-element"><button class="header-button">SELL YOUR BOOK</button></li>
+                        </ul>
+                    </nav>
+                    <div class="basket-icon-container">
+                        <button class="header-button" onclick="location.href='basket.html'"><img src="assets/basket.svg" alt="Your basket" class="basket-icon"></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <section class="basket-section">
-            <div class="basket-section-container">
-                <div class="basket-section-info-container">
-                    <div class="basket-title-container">
-                        <span class="basket-title">Your Cart</span>
-                        <span class="basket-text">2 items</span>
-                    </div>
-                    <div class="basket-carts-and-order-container">
-                        <div>
-                            <div style="display: flex;">
-                                <div class="basket-cart-container">
-                                    <img src="assets/Mystery of the Lost Island.png" alt="Picture of the card" class="picture-of-the-card" id="basket-picture-of-the-card">
-                                    <div class="card-text-container" id="basket-card-name">
-                                        <span>Mystery of the Lost Island</span>
-                                        <div>
-                                            <span class="author" id="basket-author">Jane Smith</span>
-                                            <div class="star-container">
-                                                <img src="assets/black-star.svg" class="star">
-                                                <img src="assets/black-star.svg" class="star">
-                                                <img src="assets/black-star.svg" class="star">
-                                                <img src="assets/white-star.svg" class="star">
-                                                <img src="assets/white-star.svg" class="star">
+        </header>
+        <main>
+            <section class="basket-section">
+                <div class="basket-section-container">
+                    <div class="basket-section-info-container">
+                        <div class="basket-title-container">
+                            <span class="basket-title">Your Cart</span>
+                            <span class="basket-text">2 items</span>
+                        </div>
+                        <div class="basket-carts-and-order-container">
+                            <div>
+                                <div style="display: flex;">
+                                    <div class="basket-cart-container">
+                                        <img src="assets/Mystery of the Lost Island.png" alt="Picture of the card" class="picture-of-the-card" id="basket-picture-of-the-card">
+                                        <div class="card-text-container" id="basket-card-name">
+                                            <span>Mystery of the Lost Island</span>
+                                            <div>
+                                                <span class="author" id="basket-author">Jane Smith</span>
+                                                <div class="star-container">
+                                                    <img src="assets/black-star.svg" class="star">
+                                                    <img src="assets/black-star.svg" class="star">
+                                                    <img src="assets/black-star.svg" class="star">
+                                                    <img src="assets/white-star.svg" class="star">
+                                                    <img src="assets/white-star.svg" class="star">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="cash-and-urn-container">
+                                        <div class="cash">₹14.99</div>
+                                        <img src="assets/urn.svg" alt="Urn" class="urn">
+                                    </div>
                                 </div>
-                                <div class="cash-and-urn-container">
-                                    <div class="cash">₹14.99</div>
-                                    <img src="assets/urn.svg" alt="Urn" class="urn">
-                                </div>
-                            </div>
-                            <div style="display: flex;">
-                                <div class="basket-cart-container">
-                                    <img src="assets/Cooking Made Easy.png" alt="Picture of the card" class="picture-of-the-card" id="basket-picture-of-the-card">
-                                    <div class="card-text-container" id="basket-card-name">
-                                        <span>Cooking Made Easy</span>
-                                        <div>
-                                            <span class="author" id="basket-author">Emily Clark</span>
-                                            <div class="star-container">
-                                                <img src="assets/black-star.svg" class="star">
-                                                <img src="assets/black-star.svg" class="star">
-                                                <img src="assets/black-star.svg" class="star">
-                                                <img src="assets/black-star.svg" class="star">
-                                                <img src="assets/white-star.svg" class="star">
+                                <div style="display: flex;">
+                                    <div class="basket-cart-container">
+                                        <img src="assets/Cooking Made Easy.png" alt="Picture of the card" class="picture-of-the-card" id="basket-picture-of-the-card">
+                                        <div class="card-text-container" id="basket-card-name">
+                                            <span>Cooking Made Easy</span>
+                                            <div>
+                                                <span class="author" id="basket-author">Emily Clark</span>
+                                                <div class="star-container">
+                                                    <img src="assets/black-star.svg" class="star">
+                                                    <img src="assets/black-star.svg" class="star">
+                                                    <img src="assets/black-star.svg" class="star">
+                                                    <img src="assets/black-star.svg" class="star">
+                                                    <img src="assets/white-star.svg" class="star">
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div> 
+                                        </div> 
+                                    </div>
+                                    <div class="cash-and-urn-container">
+                                        <div class="cash">₹9.99</div>
+                                        <img src="assets/urn.svg" alt="Urn" class="urn">
+                                    </div>
                                 </div>
-                                <div class="cash-and-urn-container">
-                                    <div class="cash">₹9.99</div>
-                                    <img src="assets/urn.svg" alt="Urn" class="urn">
+                            </div>
+                            <div class="basket-order-container">
+                                <div class="basket-order-title">Order Summary</div>
+                                <div class="basket-order-subtotal-and-shipping">
+                                    <span class="basket-order-subtotal-and-shipping-text">Subtotal</span>
+                                    <span class="basket-order-subtotal-and-shipping-cash">₹24.98</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="basket-order-container">
-                            <div class="basket-order-title">Order Summary</div>
-                            <div class="basket-order-subtotal-and-shipping">
-                                <span class="basket-order-subtotal-and-shipping-text">Subtotal</span>
-                                <span class="basket-order-subtotal-and-shipping-cash">₹24.98</span>
-                            </div>
-                            <div class="basket-order-subtotal-and-shipping">
-                                <span class="basket-order-subtotal-and-shipping-text">Shipping</span>
-                                <span class="basket-order-subtotal-and-shipping-cash">₹80.00</span>
-                            </div>
-                            <div class="basket-order-promotion">Spend ₹474.02 more to get <span style="font-weight: 700;">FREE Shipping!</span></div>
-                            <div class="basket-order-line-flex">
-                                <div class="basket-order-line"></div>
-                            </div>
-                            <div class="basket-order-total">
-                                <span>Total</span>
-                                <span>₹104.98</span>
-                            </div>
-                            <div class="basket-order-button-flex">
-                                <button class="basket-order-button">Proceed to Checkout</button>
+                                <div class="basket-order-subtotal-and-shipping">
+                                    <span class="basket-order-subtotal-and-shipping-text">Shipping</span>
+                                    <span class="basket-order-subtotal-and-shipping-cash">₹80.00</span>
+                                </div>
+                                <div class="basket-order-promotion">Spend ₹474.02 more to get <span style="font-weight: 700;">FREE Shipping!</span></div>
+                                <div class="basket-order-line-flex">
+                                    <div class="basket-order-line"></div>
+                                </div>
+                                <div class="basket-order-total">
+                                    <span>Total</span>
+                                    <span>₹104.98</span>
+                                </div>
+                                <div class="basket-order-button-flex">
+                                    <button class="basket-order-button">Proceed to Checkout</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="up-footer">
+                    <div class="footer-first-section">
+                        <h2 class="footer-first-section-title">Books</h2>
+                        <h3 class="footer-first-section-text">Books Delivered. Imagination Unlimited.</h3>
+                    </div>
+                    <div class="footer-second-section">
+                        <h2 class="footer-second-section-title">Quick Links</h2>
+                        <ul style="list-style: none; margin: 0 0 0 -1.2rem;">
+                            <li class="footer-list"><button class="button-footer">Home</button></li>
+                            <li class="footer-list"><button class="button-footer">About Us</button></li>
+                            <li class="footer-list"><button class="button-footer">Contact</button></li>
+                        </ul>
+                    </div>
+                    <div class="footer-third-section">
+                        <h2 class="footer-third-section-title">Contact</h2>
+                        <ul style="list-style: none;">
+                            <li class="footer-list"><button class="button-footer" onclick="window.location.href='mailto:mssonukr@gmail.com'">Email: mssonukr@gmail.com</button></li>
+                            <li class="footer-list"><button class="button-footer" onclick="window.location.href='tel:+917061543815'">Phone: +91 7061543815</button></li>
+                            <li class="footer-list"><button class="button-footer" onclick="window.location.href='https://yandex.by/maps/geo/mullana/2239366727/?ll=140.890337%2C-36.878508&source=serp_navig&z=17.1'">
+                                MMEC, Mullana - 133207</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-fourth-section">
+                        <h2 class="footer-fourth-section-title">We Accept</h2>
+                        <ul style="list-style: none; display: flex; margin: 0 0 0 -3rem;">
+                            <li class="footer-list"><img src="assets/visa.png" alt="Logo Visa"></li>
+                            <li class="footer-list"><img src="assets/mastercard.png" alt="Logo Mastercard"></li>
+                            <li class="footer-list"><img src="assets/american-express.png" alt="Logo American Express"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="down-footer">
+                    © 2025 Books. All rights reserved. | Made By Sonu ❤
+                </div>
             </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-container">
-            <div class="up-footer">
-                <div class="footer-first-section">
-                    <h2 class="footer-first-section-title">Books</h2>
-                    <h3 class="footer-first-section-text">Books Delivered. Imagination Unlimited.</h3>
-                </div>
-                <div class="footer-second-section">
-                    <h2 class="footer-second-section-title">Quick Links</h2>
-                    <ul style="list-style: none; margin: 0 0 0 -1.2rem;">
-                        <li class="footer-list"><button class="button-footer">Home</button></li>
-                        <li class="footer-list"><button class="button-footer">About Us</button></li>
-                        <li class="footer-list"><button class="button-footer">Contact</button></li>
-                    </ul>
-                </div>
-                <div class="footer-third-section">
-                    <h2 class="footer-third-section-title">Contact</h2>
-                    <ul style="list-style: none;">
-                        <li class="footer-list"><button class="button-footer" onclick="window.location.href='mailto:mssonukr@gmail.com'">Email: mssonukr@gmail.com</button></li>
-                        <li class="footer-list"><button class="button-footer" onclick="window.location.href='tel:+917061543815'">Phone: +91 7061543815</button></li>
-                        <li class="footer-list"><button class="button-footer" onclick="window.location.href='https://yandex.by/maps/geo/mullana/2239366727/?ll=140.890337%2C-36.878508&source=serp_navig&z=17.1'">
-                            MMEC, Mullana - 133207</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-fourth-section">
-                    <h2 class="footer-fourth-section-title">We Accept</h2>
-                    <ul style="list-style: none; display: flex; margin: 0 0 0 -3rem;">
-                        <li class="footer-list"><img src="assets/visa.png" alt="Logo Visa"></li>
-                        <li class="footer-list"><img src="assets/mastercard.png" alt="Logo Mastercard"></li>
-                        <li class="footer-list"><img src="assets/american-express.png" alt="Logo American Express"></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="down-footer">
-                © 2025 Books. All rights reserved. | Made By Sonu ❤
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
