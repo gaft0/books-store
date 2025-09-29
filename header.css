@@ -46,3 +46,13 @@ h1 {
 .header-list-element {
     list-style: none;
 }
+
+.basket-icon-container {
+    margin: 1.25rem 3.95rem 0 2.22rem;
+}
+
+.basket-icon {
+    max-width: 2.06rem;
+    width: 100%;
+    height: auto;
+}
