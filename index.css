@@ -95,6 +95,12 @@
     width: 100%;
 }
 
+.result-search-container {
+    display: none;
+    margin: 0 5rem 0 10rem;
+    width: 25rem;
+}
+list-search
 .second-section-container {
     max-width: 1920px;   
     margin: 0 auto;
@@ -190,8 +196,30 @@
     transition: background-color linear 0.2s;
 }
 
+.black-button-search {
+    background-color: #000000;
+    height: 2rem;
+    width: 5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color linear 0.2s;
+    margin: -1rem 1rem 0 0;
+}
+
 .black-button:hover {
     background-color: #4F46E5;
+}
+
+.black-button-search:hover {
+    background-color: #4F46E5;
+}
+
+.list-search {
+    background-color: #FFFFFF;
+    margin: 1rem 0;
+    border-radius: 5px;
 }
 
 #three-line-description {

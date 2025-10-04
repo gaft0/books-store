@@ -7,7 +7,6 @@ class Book {
         this.img = img;
         this.categories = categories;
     }
-
 }
 
 let booksArray = [];
@@ -95,4 +94,70 @@ function showStars(score) {
     return result;
 }
 
+const input = document.querySelector('.search-container-text');
+const fan = document.querySelector('.fan-of-picture-container');
+const search = document.querySelector('.result-search-container');
+const resultList = document.getElementById('result-search');
 
+input.addEventListener('input', function () {
+    const currentInput = this.value.toLowerCase();
+    resultList.innerHTML = '';
+    
+    if (currentInput !== '') {
+        fan.style.display = 'none';
+        search.style.display = 'block';
+        
+        const matchTitle = booksArray.filter(book => book.title.toLowerCase().includes(currentInput));
+        const matchAuthor = booksArray.filter(book => book.author.toLowerCase().includes(currentInput));
+        const matchDescription = booksArray.filter(book => book.description.toLowerCase().includes(currentInput));
+        
+        const allMatches = [...matchTitle, ...matchAuthor, ...matchDescription];
+        const uniqueMatches = [];
+        const coincidenceMatches = {};
+        
+        allMatches.forEach(book => {
+            const bookId = booksArray.indexOf(book);
+            
+            if (!coincidenceMatches[bookId]) {
+                coincidenceMatches[bookId] = true;
+                uniqueMatches.push(book);
+            }
+        });
+        
+        if (uniqueMatches.length > 0) {
+            uniqueMatches.forEach(book => {
+                resultList.innerHTML += `
+                    <li class="list-search">
+                        <div class="card-text-container">
+                            <span>${book.title}</span>
+                            <div style="display: flex; justify-content: space-between;">
+                                <div>
+                                    <div style="display: flex;">
+                                        <span class="author">${book.author} •</span>
+                                        <div class="star-container">
+                                            ${showStars(book.score)}
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="black-button-search">
+                                    <img src="assets/card-basket.svg">
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                `;
+            });
+        } else {
+            resultList.innerHTML = `
+                <li class="list-search">
+                    <div class="card-text-container" style="text-align: center; padding: 1.5rem;">
+                        <span>Nothing found matching your request.</span>
+                    </div>
+                </li>
+            `;
+        }
+    } else {
+        fan.style.display = 'block';
+        search.style.display = 'none';
+    }
+});
