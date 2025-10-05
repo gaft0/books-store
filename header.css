@@ -49,6 +49,23 @@ h1 {
 
 .basket-icon-container {
     margin: 1.25rem 3.95rem 0 2.22rem;
+    position: relative;
+}
+
+.basket-red-circle {
+    display: none;
+    position: absolute;
+    background-color: #FF0000;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 90px;
+    margin: -0.8rem 0 0 2.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    text-align: center;
 }
 
 .basket-icon {
