@@ -9,6 +9,34 @@ function showBasketBooks() {
         basketCounter.textContent = `${basket.length} items`;
     }
 
+    const subtotalCash = document.getElementById('subtotal');
+
+    let subtotalCashNumber = 0;
+    for (let i = 0; i < basket.length; i++) {
+        subtotalCashNumber += basket[i].price;
+    }
+    subtotalCash.textContent = `₹${subtotalCashNumber}`;
+    
+    const shippingCash = document.getElementById('shipping');
+    const textAboutShipping = document.querySelector('.basket-order-promotion');
+    const finalCost = document.getElementById('total');
+
+    const needForFreeShipping = 500;
+    const shippingCost = 80;
+    const freeShipping = 0;
+
+    if (subtotalCashNumber < needForFreeShipping && basket.length !== 0) {
+        shippingCash.textContent = `₹${shippingCost}`;
+        textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${needForFreeShipping - subtotalCashNumber} more to get <span style="font-weight: 700;">FREE Shipping!</span></div>`;
+        finalCost.textContent = `₹${subtotalCashNumber + shippingCost}`;
+    } else if (basket.length !== 0) {
+        textAboutShipping.style.display = 'none';
+        finalCost.textContent = `₹${subtotalCashNumber}`;
+    } else {
+        shippingCash.textContent = `₹${freeShipping}`;
+        finalCost.textContent = `₹${freeShipping}`;
+        textAboutShipping.style.display = 'none';
+    }
 
     for (let i = 0; i < basket.length; i++) {
         basketElement.innerHTML += `
@@ -62,9 +90,8 @@ function removeFromBasket(bookId) {
     const basket = getLocalStorageBasket();
     const updatedBasket = basket.filter(book => book.id !== bookId);
 
+    location.reload();
     setLocalStorageBasket(updatedBasket);
-    showBasketBooks();
-    updateBasketCounter();
 }
 
 showBasketBooks();

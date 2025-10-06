@@ -19,7 +19,8 @@ function generateId() {
 
 let booksArray = [];
 
-booksArray[0] = new Book('Cooking Made Easy', 'Emily Clark', 4, 'Simple and delicious recipes for everyday cooking.', "assets/Cooking Made Easy.png", 'Best Seller Books', 9.99);
+// У первой книги цена специально изменена, чтобы ты мог проверить работу подсчета итоговой цены с учетом возможной скидки
+booksArray[0] = new Book('Cooking Made Easy', 'Emily Clark', 4, 'Simple and delicious recipes for everyday cooking.', "assets/Cooking Made Easy.png", 'Best Seller Books', 500.99);
 booksArray[1] = new Book('Mystery of the Lost Island', 'Jane Smith', 3, 'A gripping mystery novel that keeps you guessing till the end.', "assets/Mystery of the Lost Island.png", 'Best Seller Books', 14.99);
 booksArray[2] = new Book('Shadows of Doubt', 'Emma Watson', 3, 'A detective novel filled with twists and unexpected turns.', "assets/Shadows of Doubt.png", 'Best Seller Books', 13.99);
 booksArray[3] = new Book('Taste of Italy', 'Gina Rossi', 4, 'Authentic Italian recipes to bring the flavors of Italy home.', "assets/Taste of Italy.png", 'Best Seller Books', 15.75);
