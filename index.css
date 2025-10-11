@@ -49,19 +49,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     outline: none;
-    width: 90%;
-}
-
-.ellipsis {
-    height: auto;
-    max-width: 1.25rem;
-    width: 100%;
-    margin: 0.75rem 0.75rem 0.75rem 0;
-    transition: transform 0.2s linear;
-}
-
-.ellipsis:hover {
-    transform: scale(1.5);
+    width: 83%;
 }
 
 .fan-of-picture-container {
@@ -98,7 +86,7 @@
     margin: 0 5rem 0 10rem;
     width: 25rem;
 }
-list-search
+
 .second-section-container {
     max-width: 1920px;   
     margin: 0 auto;

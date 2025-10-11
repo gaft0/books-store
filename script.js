@@ -157,7 +157,15 @@ const fan = document.querySelector('.fan-of-picture-container');
 const search = document.querySelector('.result-search-container');
 const resultList = document.getElementById('result-search');
 
-input.addEventListener('input', function () {
+function debounce(func, ms) {
+  let timeout;
+  return function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, arguments), ms);
+  };
+}
+
+const debounceSearch = debounce(function(event) {
     const currentInput = this.value.toLowerCase();
     resultList.innerHTML = '';
     
@@ -174,8 +182,6 @@ input.addEventListener('input', function () {
         const coincidenceMatches = {};
         
         allMatches.forEach(book => {
-            const bookId = booksArray.indexOf(book);
-            
             if (!coincidenceMatches[book.id]) {
                 coincidenceMatches[book.id] = true;
                 uniqueMatches.push(book);
@@ -218,7 +224,11 @@ input.addEventListener('input', function () {
         fan.style.display = 'block';
         search.style.display = 'none';
     }
-});
+}, 500);
+
+input.addEventListener('input', debounceSearch);
+
+    
 
 document.addEventListener('click', (event) => {
     if (event.target.closest('.black-button')) {
