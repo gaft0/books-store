@@ -1,0 +1,11 @@
+export const SELECTORS = {
+    basketRedCircle: '.basket-red-circle',
+    searchContainerText: '.search-container-text',
+    fanOfPictureContainer: '.fan-of-picture-container',
+    resultSearchContainer: '.result-search-container',
+    blackButton: '.black-button',
+    blackButtonSearch: '.black-button-search',
+    bestSellerBooks: '#best-seller-books',
+    newReleases: '#new-releases',
+    resultSearch: '#result-search',
+};

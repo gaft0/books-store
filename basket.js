@@ -1,3 +1,5 @@
+"use strict"
+
 function showBasketBooks() {
     const basket = getLocalStorageBasket();
     const basketElement = document.getElementById('basket');
@@ -38,8 +40,9 @@ function showBasketBooks() {
         textAboutShipping.style.display = 'none';
     }
 
+    addBookContainer = '';
     for (let i = 0; i < basket.length; i++) {
-        basketElement.innerHTML += `
+        addBookContainer += `
             <li style="display: flex;">
                 <div class="basket-cart-container">
                     <img src="${basket[i].img}" alt="Picture of the card" class="picture-of-the-card" id="basket-picture-of-the-card">
@@ -60,6 +63,7 @@ function showBasketBooks() {
             </li>
         `;
     }
+    basketElement.innerHTML = addBookContainer;
 }
 
 document.addEventListener('click', (event) => {
