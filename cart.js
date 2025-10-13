@@ -47,17 +47,28 @@ export const CartModule = (() => {
     }
 
     const showStars = (score) => {
-            const totalStars = 5;
-            let result = '';
-            for (let i = 0; i < totalStars; i++) {
-                if (score > i) {
-                    result += `<img src="assets/green-star.svg" class="star">`;
-                } else {
-                    result += `<img src="assets/gray-star.svg" class="star">`;
-                }
+        const totalStars = 5;
+        let result = '';
+        for (let i = 0; i < totalStars; i++) {
+            if (score > i) {
+                result += `<img src="assets/green-star.svg" class="star">`;
+            } else {
+                result += `<img src="assets/gray-star.svg" class="star">`;
             }
-            return result;
         }
+        return result;
+    }
 
-    return { getLocalStorageBasket, setLocalStorageBasket, addToBasket, updateBasketCounter, showStars };
+    const removeFromBasket = (bookId) => {
+        const basket = getLocalStorageBasket();
+        const updatedBasket = basket.filter(book => book.id !== bookId);
+
+        setLocalStorageBasket(updatedBasket);
+    }
+
+    const calculateSubtotal = (basket) => {
+        return basket.reduce((sum, book) => sum + book.price, 0);
+    };
+
+    return { getLocalStorageBasket, setLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal };
 })();

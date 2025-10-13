@@ -8,8 +8,16 @@ export const AppModule = (() => {
     const booksArray = DataModule.getBooks();
 
     const init = () => {
-        UIModule.renderBestSellersBooks(booksArray, CartModule.showStars);
-        UIModule.renderNewReleases(booksArray, CartModule.showStars);
+        if (document.querySelector(SELECTORS.bestSellerBooks)) {
+            UIModule.renderBestSellersBooks(booksArray, CartModule.showStars);
+        }
+        if (document.querySelector(SELECTORS.newReleases)) {
+            UIModule.renderNewReleases(booksArray, CartModule.showStars);
+        }
+        if (document.querySelector(SELECTORS.basket)) {
+            UIModule.renderBasket();
+        }
+
         CartModule.updateBasketCounter();
 
         const input = document.querySelector(SELECTORS.searchContainerText); 
@@ -17,38 +25,54 @@ export const AppModule = (() => {
         const search = document.querySelector(SELECTORS.resultSearchContainer);
         const resultList = document.getElementById(SELECTORS.resultSearch);
 
-        const debounce = (func, ms) => {
-            let timeout;
-            return function() {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, arguments), ms);
+        if (input && fan && search && resultList) {
+            const debounce = (func, ms) => {
+                let timeout;
+                return function() {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(this, arguments), ms);
+                };
             };
-        };
 
-        const debounceSearch = debounce(function() {
-            const currentInput = this.value.toLowerCase();
-            
-            if (currentInput !== '') {
-                UIModule.renderSearchBooks(booksArray, currentInput, fan, search, resultList, CartModule.showStars);
-            } else {
-                fan.style.display = 'block';
-                search.style.display = 'none';
-            }
-        }, 300);
+            const debounceSearch = debounce(function() {
+                const currentInput = this.value.toLowerCase();
+                
+                if (currentInput !== '') {
+                    UIModule.renderSearchBooks(booksArray, currentInput, fan, search, resultList, CartModule.showStars);
+                } else {
+                    fan.style.display = 'block';
+                    search.style.display = 'none';
+                }
+            }, 300);
 
-        input.addEventListener('input', debounceSearch);
+            input.addEventListener('input', debounceSearch);
+        }
 
         document.addEventListener('click', (event) => {
             const button = event.target.closest(SELECTORS.blackButton) || event.target.closest(SELECTORS.blackButtonSearch);
-            if (!button) {
-                return;
+            if (button) {
+                const bookId = button.getAttribute('data-book-id');
+                const book = booksArray.find(book => book.id == bookId);
+                
+                if (book) {
+                    CartModule.addToBasket(book);
+                    CartModule.updateBasketCounter();
+                    if (document.querySelector(SELECTORS.basket)) {
+                        UIModule.renderBasket();
+                    }
+                }
             }
 
-            const bookId = button.getAttribute('data-book-id');
-            const book = booksArray.find(book => book.id === bookId);
+            const urn = event.target.closest(SELECTORS.urn);
+            if (urn) {
+                const bookId = Number(urn.getAttribute('data-book-id'));
 
-            if (book) {
-                CartModule.addToBasket(book);
+                CartModule.removeFromBasket(bookId);
+                CartModule.updateBasketCounter();
+
+                if (document.querySelector(SELECTORS.basket)) {
+                    UIModule.renderBasket();
+                }
             }
         });
     };

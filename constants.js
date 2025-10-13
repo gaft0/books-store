@@ -7,5 +7,12 @@ export const SELECTORS = {
     blackButtonSearch: '.black-button-search',
     bestSellerBooks: '#best-seller-books',
     newReleases: '#new-releases',
-    resultSearch: '#result-search',
+    resultSearch: 'result-search',
+    basket: '#basket',
+    basketText: '.basket-text',
+    subtotal: '#subtotal',
+    shipping: '#shipping',
+    total: '#total',
+    basketPromotion: '.basket-order-promotion',
+    urn: '.urn',
 };
