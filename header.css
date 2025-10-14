@@ -1,6 +1,16 @@
+:root {
+    --gray: #E4E4E7;
+    --dark-blue: #1E1B4B;
+    --white: #FFFFFF;
+    --black-button-hover: #4F46E5;
+    --red: #FF0000;
+}
+
 header {
-    background-color: #E4E4E7;    
+    background-color: var(--gray);    
     width: 100%;
+    position: fixed;
+    z-index: 9999;
 }
 
 .header-container {
@@ -16,22 +26,22 @@ h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
     margin: 0 0 0 3.95rem;
-    padding: 1.75rem 0 0 0;
-    color: #1E1B4B;
+    padding: 1.75rem 0 1.75rem 0;
+    color: var(--dark-blue);
 }
 
 .header-button {
     margin: 0 1vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
-    color: #1E1B4B;
+    color: var(--dark-blue);
     font-size: 1rem;
     border-bottom: 3px solid transparent;
     transition: border-bottom-color 0.2s linear, border-bottom-width 0.2s linear;
 }
 
 .header-button:hover {
-    border-bottom: 3px solid #4F46E5;
+    border-bottom: 3px solid var(--black-button-hover);
 }
 
 .header-container-nav {
@@ -55,13 +65,13 @@ h1 {
 .basket-red-circle {
     display: none;
     position: absolute;
-    background-color: #FF0000;
+    background-color: var(--red);
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 90px;
     margin: -0.8rem 0 0 2.3rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #FFFFFF;
+    color: var(--white);
     font-weight: 700;
     font-size: 0.8rem;
     display: flex;

@@ -1,5 +1,14 @@
+:root {
+    --white: #FFFFFF;
+    --blue-button-hover: #18181B;
+    --dark-text: #1C2024;
+    --background-color: #FAFAFA;
+    --first-basket-text: #71717A;
+    --second-basket-text: #3F3F46;
+}
+
 .basket-section {
-    background-color: #FAFAFA;
+    background-color: var(--background-color);
     width: 100%;
 }   
 
@@ -11,7 +20,7 @@
 
 .basket-section-info-container {
     margin: 0 3.95rem;
-    background-color: #FAFAFA;
+    background-color: var(--background-color);
 }
 
 .basket-title-container {
@@ -21,7 +30,7 @@
 }
 
 .basket-title {
-    color: #18181B;
+    color: var(--blue-button-hover);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
@@ -29,7 +38,7 @@
 }
 
 .basket-text {
-    color: #71717A;
+    color: var(--first-basket-text);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -40,19 +49,19 @@
     display: flex;
     justify-content: space-between;
     margin: 3.95rem 0 0 0;
-    background-color: #FAFAFA;
+    background-color: var(--background-color);
 }
 
 .basket-cart-container {
     display: flex;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     width: 45rem;
     margin: 0 0 0.8rem 0;
     border-radius: 0.5rem;
 }
 
 .basket-order-container {
-    background-color: #FFFFFF;
+    background-color: var(--white);
     width: 22.5rem;
     height: 15.7rem;
     border-radius: 0.5rem;
@@ -60,7 +69,7 @@
 }
 
 .basket-order-title {
-    color: #1C2024;
+    color: var(--dark-text);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.12rem;
     font-weight: 700;
@@ -75,7 +84,7 @@
 }
 
 .basket-order-subtotal-and-shipping-text {
-    color: #3F3F46;
+    color: var(--second-basket-text);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -83,7 +92,7 @@
 }
 
 .basket-order-subtotal-and-shipping-cash {
-    color: #18181B;
+    color: var(--blue-button-hover);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -91,7 +100,7 @@
 }
 
 .basket-order-promotion {
-    color: #71717A;
+    color: var(--first-basket-text);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 0.87rem;
     font-weight: 400;
@@ -105,7 +114,7 @@
 }
 
 .basket-order-line {
-    background-color: #1C2024;
+    background-color: var(--dark-text);
     height: 0.1rem;
     width: 93%;
 }
@@ -113,7 +122,7 @@
 .basket-order-total {
     display: flex;
     justify-content: space-between;
-    color: #1C2024;
+    color: var(--dark-text);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.12rem;
     font-weight: 700;
@@ -127,8 +136,8 @@
 }
 
 .basket-order-button {
-    background-color: #18181B;
-    color: #FFFFFF;
+    background-color: var(--blue-button-hover);
+    color: var(--white);
     text-align: center;
     align-content: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -143,9 +152,9 @@
 }
 
 .basket-order-button:hover {
-    border: #18181B solid 2px;
-    background-color: #FFFFFF;
-    color: #18181B;
+    border: var(--blue-button-hover) solid 2px;
+    background-color: var(--white);
+    color: var(--blue-button-hover);
 }
 
 #basket-picture-of-the-card {
@@ -155,7 +164,7 @@
 }
 
 #basket-card-name {
-    color: #18181B;
+    color: var(--blue-button-hover);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -163,7 +172,7 @@
 }
 
 #basket-author {
-    color: #71717A;
+    color: var(--first-basket-text);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 0.81rem;
     font-weight: 400;
@@ -178,7 +187,7 @@
 }
 
 .cash {
-    color: #18181B;
+    color: var(--blue-button-hover);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: 700;

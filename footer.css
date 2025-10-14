@@ -1,5 +1,12 @@
+:root {
+    --white: #FFFFFF;
+    --card-container: #EEF2FF;
+    --black-button-hover: #4F46E5;
+    --black: #000000;
+}
+
 footer {
-    background-color: #000000;
+    background-color: var(--black);
     width: 100%;
 }
 
@@ -13,18 +20,18 @@ footer {
 .up-footer {
     display: flex;
     justify-content: space-between;
-    background-color: #000000;
+    background-color: var(--black);
     margin: 2.5rem 0 1.25rem 0;
 }
 
 .footer-first-section {
-    color: #FFFFFF;
+    color: var(--white);
     width: 16rem;
     margin: 0 0 0 1.25rem;
 }
 
 .footer-second-section {
-    color: #FFFFFF;
+    color: var(--white);
     width: 16rem;
     margin: 0 0 0 1.1rem;
 }
@@ -32,13 +39,13 @@ footer {
 .footer-third-section {
     margin: 0 0 0 8.62rem;
     width: 20rem;
-    color: #FFFFFF;
+    color: var(--white);
 }
 
 .footer-fourth-section {
     margin: 0 0 0 6.93rem;
     width: 10rem;
-    color: #FFFFFF;
+    color: var(--white);
 }
 
 .footer-first-section-title {
@@ -80,7 +87,7 @@ footer {
 }
 
 .button-footer {
-    color: #FFFFFF;
+    color: var(--white);
     font-size: 0.87rem;
     line-height: 1.31rem;
     font-weight: 400;
@@ -88,14 +95,14 @@ footer {
 }
 
 .button-footer:hover {
-    color:#4F46E5
+    color:var(--black-button-hover);
 }
 
 .down-footer {
     display: flex;
-    border-top: 1px dashed #EEF2FF;
-    background-color:#000000;
-    color: #FFFFFF;
+    border-top: 1px dashed var(--card-container);
+    background-color:var(--black);
+    color: var(--white);
     justify-content: center;
     padding: 2.31rem 0;
 }
