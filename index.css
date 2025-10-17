@@ -1,0 +1,355 @@
+:root {
+    --gray: #E4E4E7;
+    --dark-blue: #1E1B4B;
+    --white: #FFFFFF;
+    --search-text: #80838d;
+    --third-section-title: #1C2024;
+    --card-container: #EEF2FF;
+    --blue: #818CF8;
+    --black-button-hover: #4F46E5;
+    --blue-button-hover: #18181B;
+    --black: #000000;
+    --dark-text: #1C2024;
+    --blue-button: #6366F1;
+    --yellow: #FEF9C3;
+}
+
+.first-section {
+    background-color: var(--gray);    
+    width: 100%;
+}
+
+.first-section-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;    
+    margin: 0 auto;
+    padding: 0;
+}
+
+.title {
+    padding: 6.15rem 0 1rem 3.95rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-blue);
+}
+
+.first-section-text {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-blue);
+    padding: 0 0 0 3.95rem;
+}
+
+.search-container {
+    display: flex;
+    margin: 0 0 8rem 3.95rem;
+    height: 2.5rem;
+    width: 18.75rem;
+    background-color: var(--white);
+    border-radius: 6px;
+}
+
+.magnifer {
+    height: auto;
+    max-width: 1.25rem;
+    width: 100%;
+    margin: 0.75rem;
+}
+
+.search-container-text {
+    color: var(--search-text);
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    outline: none;
+    width: 83%;
+}
+
+.fan-of-picture-container {
+    margin: 5.4rem 0 0 10rem;
+    width: 35rem;
+}
+
+.fan-of-picture {
+    position: absolute;
+    border-radius: 10px; /*Почему-то углы сглаживаются только у 1-ой картинки. Возможно из-за того, что остальные под углом.*/
+    max-width: 18rem;
+    height: auto;
+    width: 100%;
+}
+
+#Slide-4 {
+    margin: 0 0 0 3rem;
+}
+
+#Slide-3 {
+    margin: 0 0 0 2rem;
+}
+
+#Slide-2 {
+    margin: 0 0 0 1rem;
+}
+
+.second-section {    
+    width: 100%;
+}
+
+.result-search-container {
+    display: none;
+    margin: 0 5rem 0 10rem;
+    width: 25rem;
+}
+
+.second-section-container {
+    max-width: 1920px;   
+    margin: 0 auto;
+    padding: 0;
+}
+
+.second-section-title {
+    margin: 1.25rem 0 2rem 0;
+    color: var(--third-section-title);
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+.tape-of-cards-container {
+    display: flex;
+    flex-wrap: wrap;    
+    margin: 0 3.95rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 4rem 0;
+}
+
+.card-container {
+    background-color: var(--card-container);
+    height: 28.57rem;    
+    width: 17rem;
+    border-radius: 0.75rem;    
+    transition: transform 0.2s linear;
+    margin: 1rem;
+}
+
+.card-container:hover {
+    transform: scale(1.1);
+}
+
+.picture-of-the-card {
+    border-radius: 0.75rem;
+    margin:  1rem 1rem 0.62rem 1rem;
+    height: auto;
+    width: 100%;
+    max-width: 15rem;
+}
+
+.card-text-container {
+    color: var(--dark-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.7rem;
+    margin: 0 0 0 1rem;
+}
+
+.author, .point {
+    color: var(--blue);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3rem;
+    margin: 0 0.23rem 0 0;
+}
+
+.star-container {
+    margin: -0.25rem 0 0.16rem 0;
+}
+
+.star {
+    margin: 0 -0.08rem;
+    max-width: 0.87rem;
+    height: auto;
+    width: 100%;
+}
+
+.description-card {
+    color: var(--dark-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 0;
+}
+
+.black-button {
+    background-color: var(--black);
+    height: 2rem;
+    width: 15rem;
+    margin: 1.9rem 0 0 0;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color linear 0.2s;
+}
+
+.black-button-search {
+    background-color: var(--black);
+    height: 2rem;
+    width: 5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color linear 0.2s;
+    margin: -1rem 1rem 0 0;
+}
+
+.black-button:hover {
+    background-color: var(--black-button-hover);
+}
+
+.black-button-search:hover {
+    background-color: var(--black-button-hover);
+}
+
+.list-search {
+    background-color: var(--white);
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+#three-line-description {
+    margin: 0;
+}
+
+.black-button-text {
+    color: var(--white);
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.87rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    margin: 0 0 0 0.8vw;
+}
+
+.third-section {    
+    width: 100%;
+}
+
+.third-section-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;   
+    margin: 0 auto;
+    padding: 0;
+}
+
+.favorite-book {
+    height: auto;
+    width: 100%;
+    max-width: 29.68rem;
+    margin: 0 0 5.41rem 3.95rem;
+}
+
+.third-section-text-container {
+    width: 45rem;
+    margin: 0 0 0 2rem;
+}
+
+.third-section-text {
+    color: var(--dark-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    margin: 1.08rem 0 0 0;
+}
+
+.third-section-title {
+    color: var(--dark-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+.statistics-container {
+    margin: 1.08rem 0 0 0;
+    display: flex;
+}
+
+.statistics {
+    color: var(--dark-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    margin: 1.08rem 4.18rem 0 0;
+}
+
+.statistics-number {
+    color: var(--dark-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+#third-section-button {
+    margin: 3rem 0 0 0;
+}
+
+.fourth-section {
+    background-color: var(--yellow);
+    width: 100%;
+}
+
+.fourth-section-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.fourth-section-text {
+    color: var(--card-text-container);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    padding: 6.25rem 0 0.75rem 3.95rem;
+}
+
+.fourth-section-button {
+    background-color: var(--blue-button);
+    height: 2rem;
+    width: 6.68rem;
+    margin: 0 0 0 3.95rem;
+    border-radius: 0.25rem;
+    color: var(--white);
+    text-align: center;
+    align-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.87rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    transition: background-color 0.2s linear;
+}
+
+.fourth-section-button:hover {
+    background-color: var(--blue-button-hover);
+}
+
+.award {
+    width: 100%;
+    max-width: 18.75rem;
+    height: auto;
+    margin: 0 3.95rem 0 0;
+}
