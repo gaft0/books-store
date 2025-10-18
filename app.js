@@ -8,11 +8,8 @@ export const AppModule = (() => {
     const booksArray = DataModule.getBooks();
 
     const init = () => {
-        if (document.querySelector(SELECTORS.bestSellerBooks)) {
-            UIModule.renderBestSellersBooks(booksArray, CartModule.showStars);
-        }
-        if (document.querySelector(SELECTORS.newReleases)) {
-            UIModule.renderNewReleases(booksArray, CartModule.showStars);
+        if (document.querySelector(SELECTORS.bestSellerBooks) && document.querySelector(SELECTORS.newReleases)) {
+            UIModule.showCurrentCategories(booksArray);
         }
         if (document.querySelector(SELECTORS.basket)) {
             UIModule.renderBasket();

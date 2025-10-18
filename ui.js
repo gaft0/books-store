@@ -2,74 +2,55 @@ import { SELECTORS } from './constants.js';
 import { CartModule } from './cart.js';
 
 export const UIModule = (() => {
-    const renderBestSellersBooks = (booksArray, showStars) => {
-        const ul = document.querySelector(SELECTORS.bestSellerBooks);
-        let addBookContainer = '';
+    const showCurrentCategories = (booksArray) => {
+        const newReleasesContainer = document.querySelector(SELECTORS.newReleases);
+        const bestSellerBooksContainer = document.querySelector(SELECTORS.bestSellerBooks);
+
+        let renderNewReleases = '';
+        let renderBestSellerBooks = '';
 
         for (let i = 0; i < booksArray.length; i++) {
-            if (booksArray[i].categories === 'Best Seller Books') {
-                addBookContainer += `
-                    <li>
-                        <div class="card-container">
-                            <img src="${booksArray[i].img}" alt="Picture of the card" class="picture-of-the-card">
-                            <div class="card-text-container">
-                                <span>${booksArray[i].title}</span>
-                                <div>
-                                    <div style="display: flex;">
-                                        <span class="author">${booksArray[i].author} •</span>
-                                        <div class="star-container">
-                                            ${showStars(booksArray[i].score)}
-                                        </div>
-                                    </div>
-                                    <span class="description-card">${booksArray[i].description}</span>
-                                    <button class="black-button" data-book-id="${booksArray[i].id}">
-                                        <img src="assets/card-basket.svg">
-                                        <span class="black-button-text">Add To Cart</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                `;
+            const currentBook = booksArray[i];
+            const render = renderCategories(currentBook, CartModule.showStars);
+            
+            switch (booksArray[i].categories) {
+                case 'New Releases':
+                    renderNewReleases += render;
+                    break;
+                case 'Best Seller Books':
+                    renderBestSellerBooks += render;
+                    break;
             }
         }
-        
-        ul.innerHTML = addBookContainer;
+
+        newReleasesContainer.innerHTML = renderNewReleases;
+        bestSellerBooksContainer.innerHTML = renderBestSellerBooks;
     }
 
-    const renderNewReleases = (booksArray, showStars) => {
-        const ul = document.querySelector(SELECTORS.newReleases);
-        let addBookContainer = '';
-
-        for (let i = 0; i < booksArray.length; i++) {
-            if (booksArray[i].categories === 'New Releases') {
-                addBookContainer += `
-                    <li>
-                        <div class="card-container">
-                            <img src="${booksArray[i].img}" alt="Picture of the card" class="picture-of-the-card">
-                            <div class="card-text-container">
-                                <span>${booksArray[i].title}</span>
-                                <div>
-                                    <div style="display: flex;">
-                                        <span class="author">${booksArray[i].author} •</span>
-                                        <div class="star-container">
-                                            ${showStars(booksArray[i].score)}
-                                        </div>
-                                    </div>
-                                    <span class="description-card">${booksArray[i].description}</span>
-                                    <button class="black-button" data-book-id="${booksArray[i].id}">
-                                        <img src="assets/card-basket.svg">
-                                        <span class="black-button-text">Add To Cart</span>
-                                    </button>
+    const renderCategories = (currentBook, showStars) => {
+        return `
+            <li>
+                <div class="card-container">
+                    <img src="${currentBook.img}" alt="Picture of the card" class="picture-of-the-card">
+                    <div class="card-text-container">
+                        <span>${currentBook.title}</span>
+                        <div>
+                            <div style="display: flex;">
+                                <span class="author">${currentBook.author} •</span>
+                                <div class="star-container">
+                                    ${showStars(currentBook.score)}
                                 </div>
                             </div>
+                            <span class="description-card">${currentBook.description}</span>
+                            <button class="black-button" data-book-id="${currentBook.id}">
+                                <img src="assets/card-basket.svg">
+                                <span class="black-button-text">Add To Cart</span>
+                            </button>
                         </div>
-                    </li>
-                `;
-            }
-        }
-
-        ul.innerHTML = addBookContainer;
+                    </div>
+                </div>
+            </li>
+        `;
     }
 
     const renderSearchBooks = (booksArray, currentInput, fan, search, resultList, showStars) => {
@@ -206,6 +187,6 @@ export const UIModule = (() => {
         return result;
     }
 
-    return { renderBestSellersBooks, renderNewReleases, renderSearchBooks, renderBasket };
+    return { showCurrentCategories, renderCategories, renderSearchBooks, renderBasket };
 })();
 
