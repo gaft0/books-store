@@ -10,8 +10,9 @@ export const SELECTORS = {
     resultSearch: 'result-search',
     basket: '#basket',
     basketText: '.basket-text',
-    subtotal: '#subtotal',
-    shipping: '#shipping',
-    total: '#total',
+    subtotal: 'subtotal',
+    shipping: 'shipping',
+    total: 'total',
     urn: '.urn',
+    basketOrderPromotion: '.basket-order-promotion'
 };

@@ -6,6 +6,10 @@ export const UIModule = (() => {
         const newReleasesContainer = document.querySelector(SELECTORS.newReleases);
         const bestSellerBooksContainer = document.querySelector(SELECTORS.bestSellerBooks);
 
+        if (!newReleasesContainer || !bestSellerBooksContainer) {
+            return;
+        }
+
         let renderNewReleases = '';
         let renderBestSellerBooks = '';
 
@@ -111,24 +115,30 @@ export const UIModule = (() => {
 
     const renderBasket = () => {
         const basket = CartModule.getLocalStorageBasket();
-        const basketElement = document.getElementById('basket');
-        const basketCounter = document.querySelector('.basket-text');
+        const basketElement = document.querySelector(SELECTORS.basket);
+        const basketCounter = document.querySelector(SELECTORS.basketText);
         
+        if (!basketElement) {
+            return;
+        }
+
         basketElement.innerHTML = '';
-        
+
         if (basketCounter) {
             basketCounter.textContent = `${basket.length} items`;
         }
     
-        const subtotalCash = document.getElementById('subtotal');
         const subtotalCashNumber = CartModule.calculateSubtotal(basket);
+        const subtotalCash = document.getElementById(SELECTORS.subtotal);
+        const shippingCash = document.getElementById(SELECTORS.shipping);
+        const textAboutShipping = document.querySelector(SELECTORS.basketOrderPromotion);
+        const finalCost = document.getElementById(SELECTORS.total);
+
+        if (!subtotalCash || !shippingCash || !textAboutShipping || !finalCost) {
+            return;
+        }
         
         subtotalCash.textContent = `₹${subtotalCashNumber.toFixed(2)}`;
-
-        const shippingCash = document.getElementById('shipping');
-        const textAboutShipping = document.querySelector('.basket-order-promotion');
-        const finalCost = document.getElementById('total');
-
         const needForFreeShipping = 500;
         const shippingCost = 80;
         const freeShipping = 0;

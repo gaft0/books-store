@@ -38,6 +38,10 @@ export const CartModule = (() => {
         const currentBasket = getLocalStorageBasket();
         const redCircle = document.querySelector(SELECTORS.basketRedCircle);
 
+        if (!redCircle) {
+            return;
+        }
+
         if (currentBasket.length > 0) {
             redCircle.style.display = 'block';
             redCircle.textContent = currentBasket.length;
