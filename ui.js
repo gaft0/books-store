@@ -118,7 +118,7 @@ export const UIModule = (() => {
         } else {
             addBookContainer = `
                 <li class="list-search">
-                    <div class="card-text-container" style="text-align: center; padding: 1.5rem;">
+                    <div class="card-text-container" style="text-align: center; margin: 6rem 1.5rem 1.5rem 1.5rem;">
                         <span>Nothing found matching your request.</span>
                     </div>
                 </li>
@@ -152,19 +152,6 @@ export const UIModule = (() => {
         const shippingCost = 80;
         const freeShipping = 0;
 
-        if (subtotalCashNumber < needForFreeShipping && basket.length !== 0) {
-            shippingCash.textContent = `₹${shippingCost}`;
-            textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${needForFreeShipping - subtotalCashNumber} more to get <span style="font-weight: 700;">FREE Shipping!</span></div>`;
-            finalCost.textContent = `₹${Math.round((subtotalCashNumber + shippingCost) * 100) / 100}`;
-        } else if (basket.length !== 0) {
-            textAboutShipping.style.display = 'none';
-            finalCost.textContent = `₹${subtotalCashNumber}`;
-        } else {
-            shippingCash.textContent = `₹${freeShipping}`;
-            finalCost.textContent = `₹${freeShipping}`;
-            textAboutShipping.style.display = 'none';
-        }
-
         let addBookContainer = '';
         for (let i = 0; i < basket.length; i++) {
             addBookContainer += `
@@ -189,6 +176,19 @@ export const UIModule = (() => {
             `;
         }
         basketElement.innerHTML = addBookContainer;
+        
+        if (subtotalCashNumber < needForFreeShipping && basket.length !== 0) {
+            shippingCash.textContent = `₹${shippingCost}`;
+            textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${needForFreeShipping - subtotalCashNumber} more to get <span style="font-weight: 700;">FREE Shipping!</span></div>`;
+            finalCost.textContent = `₹${Math.round((subtotalCashNumber + shippingCost) * 100) / 100}`;
+        } else if (basket.length !== 0) {
+            textAboutShipping.style.display = 'none';
+            finalCost.textContent = `₹${subtotalCashNumber}`;
+        } else {
+            shippingCash.textContent = `₹${freeShipping}`;
+            finalCost.textContent = `₹${freeShipping}`;
+            textAboutShipping.style.display = 'none';
+        }
     }
 
     const showBlackStars = (score) => {
@@ -206,6 +206,6 @@ export const UIModule = (() => {
         return result;
     }
 
-    return { renderBestSellersBooks, renderNewReleases, renderSearchBooks, renderBasket, showBlackStars };
+    return { renderBestSellersBooks, renderNewReleases, renderSearchBooks, renderBasket };
 })();
 

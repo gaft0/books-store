@@ -70,5 +70,5 @@ export const CartModule = (() => {
         return basket.reduce((sum, book) => sum + book.price, 0);
     };
 
-    return { getLocalStorageBasket, setLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal };
+    return { getLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal };
 })();

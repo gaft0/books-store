@@ -63,7 +63,6 @@ h1 {
 }
 
 .basket-red-circle {
-    display: none;
     position: absolute;
     background-color: var(--red);
     width: 1.2rem;

@@ -5,7 +5,7 @@ export const DataModule = (() => {
             title: 'Cooking Made Easy',
             author: 'Emily Clark',
             description: 'Simple and delicious recipes for everyday cooking.',
-            price: 500.99,
+            price: 9.99,
             score: 4,
             img: "assets/Cooking Made Easy.png",
             categories: 'Best Seller Books',

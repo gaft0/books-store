@@ -13,6 +13,5 @@ export const SELECTORS = {
     subtotal: '#subtotal',
     shipping: '#shipping',
     total: '#total',
-    basketPromotion: '.basket-order-promotion',
     urn: '.urn',
 };
