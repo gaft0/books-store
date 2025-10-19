@@ -74,5 +74,24 @@ export const CartModule = (() => {
         return basket.reduce((sum, book) => sum + book.price, 0);
     };
 
-    return { getLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal };
+    const searchBooks = (booksArray, currentInput) => {
+        const matchTitle = booksArray.filter(book => book.title.toLowerCase().includes(currentInput));
+        const matchAuthor = booksArray.filter(book => book.author.toLowerCase().includes(currentInput));
+        const matchDescription = booksArray.filter(book => book.description.toLowerCase().includes(currentInput));
+        
+        const allMatches = [...matchTitle, ...matchAuthor, ...matchDescription];
+        const uniqueMatches = [];
+        const coincidenceMatches = {};
+        
+        allMatches.forEach(book => {
+            if (!coincidenceMatches[book.id]) {
+                coincidenceMatches[book.id] = true;
+                uniqueMatches.push(book);
+            }
+        });
+
+        return uniqueMatches;
+    }
+
+    return { getLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal, searchBooks };
 })();

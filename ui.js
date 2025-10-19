@@ -58,27 +58,14 @@ export const UIModule = (() => {
     }
 
     const renderSearchBooks = (booksArray, currentInput, fan, search, resultList, showStars) => {
-        let addBookContainer = '';
+        const resultSearch = CartModule.searchBooks(booksArray, currentInput);
+
         fan.style.display = 'none';
         search.style.display = 'block';
-        
-        const matchTitle = booksArray.filter(book => book.title.toLowerCase().includes(currentInput));
-        const matchAuthor = booksArray.filter(book => book.author.toLowerCase().includes(currentInput));
-        const matchDescription = booksArray.filter(book => book.description.toLowerCase().includes(currentInput));
-        
-        const allMatches = [...matchTitle, ...matchAuthor, ...matchDescription];
-        const uniqueMatches = [];
-        const coincidenceMatches = {};
-        
-        allMatches.forEach(book => {
-            if (!coincidenceMatches[book.id]) {
-                coincidenceMatches[book.id] = true;
-                uniqueMatches.push(book);
-            }
-        });
+        let addBookContainer = '';
 
-        if (uniqueMatches.length > 0) {
-            uniqueMatches.forEach(book => {
+        if (resultSearch.length > 0) {
+            resultSearch.forEach(book => {
                 addBookContainer += `
                     <li class="list-search">
                         <div class="card-text-container">
@@ -128,7 +115,6 @@ export const UIModule = (() => {
             basketCounter.textContent = `${basket.length} items`;
         }
     
-        const subtotalCashNumber = CartModule.calculateSubtotal(basket);
         const subtotalCash = document.getElementById(SELECTORS.subtotal);
         const shippingCash = document.getElementById(SELECTORS.shipping);
         const textAboutShipping = document.querySelector(SELECTORS.basketOrderPromotion);
@@ -137,11 +123,6 @@ export const UIModule = (() => {
         if (!subtotalCash || !shippingCash || !textAboutShipping || !finalCost) {
             return;
         }
-        
-        subtotalCash.textContent = `₹${subtotalCashNumber.toFixed(2)}`;
-        const needForFreeShipping = 500;
-        const shippingCost = 80;
-        const freeShipping = 0;
 
         let addBookContainer = '';
         for (let i = 0; i < basket.length; i++) {
@@ -168,9 +149,16 @@ export const UIModule = (() => {
         }
         basketElement.innerHTML = addBookContainer;
         
+        const subtotalCashNumber = CartModule.calculateSubtotal(basket);
+        subtotalCash.textContent = `₹${subtotalCashNumber.toFixed(2)}`;
+
+        const needForFreeShipping = 500;
+        const shippingCost = 80;
+        const freeShipping = 0;
+
         if (subtotalCashNumber < needForFreeShipping && basket.length !== 0) {
             shippingCash.textContent = `₹${shippingCost}`;
-            
+
             textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${needForFreeShipping - subtotalCashNumber} 
             more to get <span class="basket-order-promotion-second-weight">FREE Shipping!</span></div>`;
 
@@ -179,6 +167,7 @@ export const UIModule = (() => {
             textAboutShipping.style.display = 'none';
             finalCost.textContent = `₹${subtotalCashNumber}`;
         } else {
+            subtotalCash.textContent = `₹${freeShipping}`;
             shippingCash.textContent = `₹${freeShipping}`;
             finalCost.textContent = `₹${freeShipping}`;
             textAboutShipping.style.display = 'none';
