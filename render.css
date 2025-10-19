@@ -1,0 +1,21 @@
+.render-author-and-score {
+    display: flex;
+}
+
+.render-search-container {
+    display: flex; 
+    justify-content: space-between;
+}
+
+#id {
+    text-align: center; 
+    margin: 6rem 1.5rem 1.5rem 1.5rem;
+}
+
+.render-basket-cart-container {
+    display: flex;
+}
+
+.basket-order-promotion-second-weight {
+    font-weight: 700;
+}

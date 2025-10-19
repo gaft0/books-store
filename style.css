@@ -24,4 +24,11 @@ button {
 
 main {
     flex: 1;
+    margin: 5.8rem 0 0 0;
+}
+
+.general-div {
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh;
 }

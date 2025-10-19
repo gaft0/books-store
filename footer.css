@@ -106,3 +106,18 @@ footer {
     justify-content: center;
     padding: 2.31rem 0;
 }
+
+.footer-second-section-ul {
+    list-style: none; 
+    margin: 0 0 0 -1.2rem;
+}
+
+.footer-third-section-ul {
+    list-style: none;
+}
+
+.footer-fourth-section-ul {
+    list-style: none;
+    display: flex; 
+    margin: 0 0 0 -3rem;
+}

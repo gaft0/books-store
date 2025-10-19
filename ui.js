@@ -39,7 +39,7 @@ export const UIModule = (() => {
                     <div class="card-text-container">
                         <span>${currentBook.title}</span>
                         <div>
-                            <div style="display: flex;">
+                            <div class="render-author-and-score">
                                 <span class="author">${currentBook.author} •</span>
                                 <div class="star-container">
                                     ${showStars(currentBook.score)}
@@ -83,9 +83,9 @@ export const UIModule = (() => {
                     <li class="list-search">
                         <div class="card-text-container">
                             <span>${book.title}</span>
-                            <div style="display: flex; justify-content: space-between;">
+                            <div class="render-search-container">
                                 <div>
-                                    <div style="display: flex;">
+                                    <div class="render-author-and-score">
                                         <span class="author">${book.author} •</span>
                                         <div class="star-container">
                                             ${showStars(book.score)}
@@ -103,7 +103,7 @@ export const UIModule = (() => {
         } else {
             addBookContainer = `
                 <li class="list-search">
-                    <div class="card-text-container" style="text-align: center; margin: 6rem 1.5rem 1.5rem 1.5rem;">
+                    <div class="card-text-container" id="render-card-text-container">
                         <span>Nothing found matching your request.</span>
                     </div>
                 </li>
@@ -146,7 +146,7 @@ export const UIModule = (() => {
         let addBookContainer = '';
         for (let i = 0; i < basket.length; i++) {
             addBookContainer += `
-                <li style="display: flex;">
+                <li class="render-basket-cart-container">
                     <div class="basket-cart-container">
                         <img src="${basket[i].img}" alt="Picture of the card" class="picture-of-the-card" id="basket-picture-of-the-card">
                         <div class="card-text-container" id="basket-card-name">
@@ -170,7 +170,10 @@ export const UIModule = (() => {
         
         if (subtotalCashNumber < needForFreeShipping && basket.length !== 0) {
             shippingCash.textContent = `₹${shippingCost}`;
-            textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${needForFreeShipping - subtotalCashNumber} more to get <span style="font-weight: 700;">FREE Shipping!</span></div>`;
+            
+            textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${needForFreeShipping - subtotalCashNumber} 
+            more to get <span class="basket-order-promotion-second-weight">FREE Shipping!</span></div>`;
+
             finalCost.textContent = `₹${Math.round((subtotalCashNumber + shippingCost) * 100) / 100}`;
         } else if (basket.length !== 0) {
             textAboutShipping.style.display = 'none';

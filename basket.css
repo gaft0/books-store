@@ -7,6 +7,10 @@
     --second-basket-text: #3F3F46;
 }
 
+.basket-header {
+    background-color: #FAFAFA;
+}   
+
 .basket-section {
     background-color: var(--background-color);
     width: 100%;
@@ -206,3 +210,11 @@
     transform: scale(1.1);
 }
 
+#basket {
+    margin: 0;
+    padding: 0;
+}
+
+#general-basket-div {
+    background-color: #FAFAFA;
+}

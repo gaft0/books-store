@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="basket.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="render.css">
     <link rel="icon" href="assets/favicon.png">
     <title>Books Store | gaft0</title>
 </head>
 <body>
-    <div style="display: flex; flex-direction: column; min-height: 100vh; background-color: #FAFAFA;">
-        <header style="background-color: #FAFAFA;">
+    <div class="general-div" id="general-basket-div">
+        <header class="basket-header">
             <div class="header-container">
                 <h1>Books</h1>
                 <div class="header-container-nav">
@@ -37,10 +38,10 @@
                     <div class="basket-section-info-container">
                         <div class="basket-title-container">
                             <span class="basket-title">Your Cart</span>
-                            <span class="basket-text">0 items</span>
+                            <span class="basket-text"></span>
                         </div>
                         <div class="basket-carts-and-order-container">
-                            <ul style="margin: 0;" id="basket">
+                            <ul id="basket">
 
                             </ul>
                             <div>
@@ -48,19 +49,19 @@
                                     <div class="basket-order-title">Order Summary</div>
                                     <div class="basket-order-subtotal-and-shipping">
                                         <span class="basket-order-subtotal-and-shipping-text">Subtotal</span>
-                                        <span class="basket-order-subtotal-and-shipping-cash" id="subtotal">₹0</span>
+                                        <span class="basket-order-subtotal-and-shipping-cash" id="subtotal"></span>
                                     </div>
                                     <div class="basket-order-subtotal-and-shipping">
                                         <span class="basket-order-subtotal-and-shipping-text">Shipping</span>
-                                        <span class="basket-order-subtotal-and-shipping-cash" id="shipping">₹0</span>
+                                        <span class="basket-order-subtotal-and-shipping-cash" id="shipping"></span>
                                     </div>
-                                    <div class="basket-order-promotion">Spend ₹500 more to get <span style="font-weight: 700;">FREE Shipping!</span></div>
+                                    <div class="basket-order-promotion"></div>
                                     <div class="basket-order-line-flex">
                                         <div class="basket-order-line"></div>
                                     </div>
                                     <div class="basket-order-total">
                                         <span>Total</span>
-                                        <span id="total">₹0</span>
+                                        <span id="total"></span>
                                     </div>
                                     <div class="basket-order-button-flex">
                                         <button class="basket-order-button">Proceed to Checkout</button>
@@ -81,7 +82,7 @@
                     </div>
                     <div class="footer-second-section">
                         <h2 class="footer-second-section-title">Quick Links</h2>
-                        <ul style="list-style: none; margin: 0 0 0 -1.2rem;">
+                        <ul class="footer-second-section-ul">
                             <li class="footer-list"><button class="button-footer" onclick="location.href='index.html'">Home</button></li>
                             <li class="footer-list"><button class="button-footer" onclick="location.href='error-page.html'">About Us</button></li>
                             <li class="footer-list"><button class="button-footer" onclick="location.href='error-page.html'">Contact</button></li>
@@ -89,7 +90,7 @@
                     </div>
                     <div class="footer-third-section">
                         <h2 class="footer-third-section-title">Contact</h2>
-                        <ul style="list-style: none;">
+                        <ul class="footer-third-section-ul">
                             <li class="footer-list"><button class="button-footer" onclick="window.location.href='mailto:mssonukr@gmail.com'">Email: mssonukr@gmail.com</button></li>
                             <li class="footer-list"><button class="button-footer" onclick="window.location.href='tel:+917061543815'">Phone: +91 7061543815</button></li>
                             <li class="footer-list"><button class="button-footer" onclick="window.location.href='https://yandex.by/maps/geo/mullana/2239366727/?ll=140.890337%2C-36.878508&source=serp_navig&z=17.1'">
@@ -99,7 +100,7 @@
                     </div>
                     <div class="footer-fourth-section">
                         <h2 class="footer-fourth-section-title">We Accept</h2>
-                        <ul style="list-style: none; display: flex; margin: 0 0 0 -3rem;">
+                        <ul class="footer-fourth-section-ul">
                             <li class="footer-list"><img src="assets/visa.png" alt="Logo Visa"></li>
                             <li class="footer-list"><img src="assets/mastercard.png" alt="Logo Mastercard"></li>
                             <li class="footer-list"><img src="assets/american-express.png" alt="Logo American Express"></li>
