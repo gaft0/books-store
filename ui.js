@@ -10,25 +10,28 @@ export const UIModule = (() => {
             return;
         }
 
-        let renderNewReleases = '';
-        let renderBestSellerBooks = '';
+        const renderNewReleases = document.createDocumentFragment();
+        const renderBestSellerBooks = document.createDocumentFragment();
 
         for (let i = 0; i < booksArray.length; i++) {
             const currentBook = booksArray[i];
-            const render = renderCategories(currentBook, CartModule.showStars);
+            const li = document.createElement('li');
+            li.innerHTML = renderCategories(currentBook, CartModule.showStars);
             
             switch (booksArray[i].categories) {
                 case 'New Releases':
-                    renderNewReleases += render;
+                    renderNewReleases.appendChild(li);
                     break;
                 case 'Best Seller Books':
-                    renderBestSellerBooks += render;
+                    renderBestSellerBooks.appendChild(li);
                     break;
             }
         }
 
-        newReleasesContainer.innerHTML = renderNewReleases;
-        bestSellerBooksContainer.innerHTML = renderBestSellerBooks;
+        newReleasesContainer.innerHTML = '';
+        bestSellerBooksContainer.innerHTML = '';
+        newReleasesContainer.appendChild(renderNewReleases);
+        bestSellerBooksContainer.appendChild(renderBestSellerBooks);
     }
 
     const renderCategories = (currentBook, showStars) => {
@@ -62,42 +65,45 @@ export const UIModule = (() => {
 
         fan.style.display = 'none';
         search.style.display = 'block';
-        let addBookContainer = '';
+        const addBookContainer = document.createDocumentFragment();
 
         if (resultSearch.length > 0) {
             resultSearch.forEach(book => {
-                addBookContainer += `
-                    <li class="list-search">
-                        <div class="card-text-container">
-                            <span>${book.title}</span>
-                            <div class="render-search-container">
-                                <div>
-                                    <div class="render-author-and-score">
-                                        <span class="author">${book.author} •</span>
-                                        <div class="star-container">
-                                            ${showStars(book.score)}
-                                        </div>
+                const li = document.createElement('li');
+                li.className = 'list-search';
+                li.innerHTML = `
+                    <div class="card-text-container">
+                        <span>${book.title}</span>
+                        <div class="render-search-container">
+                            <div>
+                                <div class="render-author-and-score">
+                                    <span class="author">${book.author} •</span>
+                                    <div class="star-container">
+                                        ${showStars(book.score)}
                                     </div>
                                 </div>
-                                <button class="black-button-search" data-book-id="${book.id}">
-                                    <img src="assets/card-basket.svg">
-                                </button>
                             </div>
+                            <button class="black-button-search" data-book-id="${book.id}">
+                                <img src="assets/card-basket.svg">
+                            </button>
                         </div>
-                    </li>
+                    </div>
                 `;
+                addBookContainer.appendChild(li);
             });
         } else {
-            addBookContainer = `
-                <li class="list-search">
-                    <div class="card-text-container" id="render-card-text-container">
-                        <span>Nothing found matching your request.</span>
-                    </div>
-                </li>
+            const li = document.createElement('li');
+            li.className = 'list-search';
+            li.innerHTML = `
+                <div class="card-text-container" id="render-card-text-container">
+                    <span>Nothing found matching your request.</span>
+                </div>
             `;
+            addBookContainer.appendChild(li);
         }
 
-        resultList.innerHTML = addBookContainer;
+        resultList.innerHTML = '';
+        resultList.appendChild(addBookContainer);
     }
 
     const renderBasket = () => {
@@ -124,10 +130,11 @@ export const UIModule = (() => {
             return;
         }
 
-        let addBookContainer = '';
+        const addBookContainer = document.createDocumentFragment();
         for (let i = 0; i < basket.length; i++) {
-            addBookContainer += `
-                <li class="render-basket-cart-container">
+            const li = document.createElement('li');
+            li.className = 'render-basket-cart-container';
+            li.innerHTML = `
                     <div class="basket-cart-container">
                         <img src="${basket[i].img}" alt="Picture of the card" class="picture-of-the-card" id="basket-picture-of-the-card">
                         <div class="card-text-container" id="basket-card-name">
@@ -149,10 +156,10 @@ export const UIModule = (() => {
                         <div class="cash">₹${basket[i].price.toFixed(2)}</div>
                         <img src="assets/urn.svg" alt="Urn" class="urn" data-book-id="${basket[i].id}">
                     </div>
-                </li>
             `;
+            addBookContainer.appendChild(li);
         }
-        basketElement.innerHTML = addBookContainer;
+        basketElement.appendChild(addBookContainer);
         
         const subtotalCashNumber = CartModule.calculateSubtotal(basket);
         subtotalCash.textContent = `₹${subtotalCashNumber.toFixed(2)}`;
@@ -195,15 +202,15 @@ export const UIModule = (() => {
     }
 
     const changeNumberOfBooks = () => {
-        const leftArrow = document.querySelector('.arrow-left');
-        const rightArrow = document.querySelector('.arrow-right');
+        const leftArrow = document.querySelector(SELECTORS.arrowLeft);
+        const rightArrow = document.querySelector(SELECTORS.arrowRight);
 
         leftArrow.addEventListener('click', (event) => {
-            const buttonLeftArrow = event.target.closest('.arrow-left');
+            const buttonLeftArrow = event.target.closest(SELECTORS.arrowLeft);
         });
 
         rightArrow.addEventListener('click', (event) => {
-            const buttonRightArrow = event.target.closest('.arrow-left');
+            const buttonRightArrow = event.target.closest(SELECTORS.arrowRight);
         });
     }
 

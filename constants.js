@@ -14,5 +14,7 @@ export const SELECTORS = {
     shipping: 'shipping',
     total: 'total',
     urn: '.urn',
-    basketOrderPromotion: '.basket-order-promotion'
+    basketOrderPromotion: '.basket-order-promotion',
+    arrowLeft: '.arrow-left',
+    arrowRight: '.arrow-right',
 };
