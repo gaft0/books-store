@@ -140,6 +140,11 @@ export const UIModule = (() => {
                             </div>
                         </div>
                     </div>
+                    <div class="change-quantity-container">
+                        <button><img src="assets/arrow.svg" alt="Left arrow" class="arrow-right"></button>
+                        <span class="current-number-books">1</span>
+                        <button><img src="assets/arrow.svg" alt="Right arrow" class="arrow-left"></button>
+                    </div>
                     <div class="cash-and-urn-container">
                         <div class="cash">₹${basket[i].price.toFixed(2)}</div>
                         <img src="assets/urn.svg" alt="Urn" class="urn" data-book-id="${basket[i].id}">
@@ -189,6 +194,19 @@ export const UIModule = (() => {
         return result;
     }
 
-    return { showCurrentCategories, renderCategories, renderSearchBooks, renderBasket };
+    const changeNumberOfBooks = () => {
+        const leftArrow = document.querySelector('.arrow-left');
+        const rightArrow = document.querySelector('.arrow-right');
+
+        leftArrow.addEventListener('click', (event) => {
+            const buttonLeftArrow = event.target.closest('.arrow-left');
+        });
+
+        rightArrow.addEventListener('click', (event) => {
+            const buttonRightArrow = event.target.closest('.arrow-left');
+        });
+    }
+
+    return { showCurrentCategories, renderCategories, renderSearchBooks, renderBasket, changeNumberOfBooks };
 })();
 
