@@ -148,9 +148,9 @@ export const UIModule = (() => {
                         </div>
                     </div>
                     <div class="change-quantity-container">
-                        <button><img src="assets/arrow.svg" alt="Left arrow" class="arrow-right"></button>
+                        <button class="arrow-right">-</button>
                         <span class="current-number-books">1</span>
-                        <button><img src="assets/arrow.svg" alt="Right arrow" class="arrow-left"></button>
+                        <button class="arrow-left">+</button>
                     </div>
                     <div class="cash-and-urn-container">
                         <div class="cash">₹${basket[i].price.toFixed(2)}</div>
