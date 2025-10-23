@@ -1,0 +1,84 @@
+:root {
+    --gray: #E4E4E7;
+    --dark-blue: #1E1B4B;
+    --white: #FFFFFF;
+    --black-button-hover: #4F46E5;
+    --red: #FF0000;
+}
+
+header {
+    background-color: var(--gray);    
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+}
+
+.header-container {
+    max-width: 1920px;    
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    margin: 0 0 0 3.95rem;
+    padding: 1.75rem 0 1.75rem 0;
+    color: var(--dark-blue);
+}
+
+.header-button {
+    margin: 0 1vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    color: var(--dark-blue);
+    font-size: 1rem;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom-color 0.2s linear, border-bottom-width 0.2s linear;
+}
+
+.header-button:hover {
+    border-bottom: 3px solid var(--black-button-hover);
+}
+
+.header-container-nav {
+    display: flex;
+    padding: 0.95rem 0 0 0;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-list-element {
+    list-style: none;
+}
+
+.basket-icon-container {
+    margin: 1.25rem 3.95rem 0 2.22rem;
+    position: relative;
+}
+
+.basket-red-circle {
+    position: absolute;
+    background-color: var(--red);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 90px;
+    margin: -0.8rem 0 0 2.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    text-align: center;
+}
+
+.basket-icon {
+    max-width: 2.06rem;
+    width: 100%;
+    height: auto;
+}

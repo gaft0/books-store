@@ -1,0 +1,240 @@
+:root {
+    --white: #FFFFFF;
+    --blue-button-hover: #18181B;
+    --dark-text: #1C2024;
+    --background-color: #FAFAFA;
+    --first-basket-text: #71717A;
+    --second-basket-text: #3F3F46;
+}
+
+.basket-header {
+    background-color: #FAFAFA;
+}   
+
+.basket-section {
+    background-color: var(--background-color);
+    width: 100%;
+}   
+
+.basket-section-container {
+    max-width: 1920px;    
+    margin: 0 auto;
+    padding: 0;
+}   
+
+.basket-section-info-container {
+    margin: 0 3.95rem;
+    background-color: var(--background-color);
+}
+
+.basket-title-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.87rem 0 0 0;
+}
+
+.basket-title {
+    color: var(--blue-button-hover);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+}
+
+.basket-text {
+    color: var(--first-basket-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.basket-carts-and-order-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 3.95rem 0 0 0;
+    background-color: var(--background-color);
+}
+
+.basket-cart-container {
+    display: flex;
+    background-color: var(--white);
+    width: 45rem;
+    margin: 0 0 0.8rem 0;
+    border-radius: 0.5rem;
+}
+
+.basket-order-container {
+    background-color: var(--white);
+    width: 22.5rem;
+    height: 15.7rem;
+    border-radius: 0.5rem;
+    margin: -2.5rem 0 0 3rem;
+}
+
+.basket-order-title {
+    color: var(--dark-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.12rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+    margin: 2.43rem 0 1.2rem 0.8rem;
+}
+
+.basket-order-subtotal-and-shipping {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0.8rem 0.5rem 0.8rem;
+}
+
+.basket-order-subtotal-and-shipping-text {
+    color: var(--second-basket-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.basket-order-subtotal-and-shipping-cash {
+    color: var(--blue-button-hover);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+.basket-order-promotion {
+    color: var(--first-basket-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.87rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    margin: 0.45rem 0 0.75rem 0.4rem;
+}
+
+.basket-order-line-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.basket-order-line {
+    background-color: var(--dark-text);
+    height: 0.1rem;
+    width: 93%;
+}
+
+.basket-order-total {
+    display: flex;
+    justify-content: space-between;
+    color: var(--dark-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.12rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+    margin: 1rem 1.5rem 0 0.95rem;
+}
+
+.basket-order-button-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.basket-order-button {
+    background-color: var(--blue-button-hover);
+    color: var(--white);
+    text-align: center;
+    align-content: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.87rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    height: 2rem;
+    width: 93%;
+    border-radius: 0.5rem;
+    margin: 1rem 0 0 0;
+    transition: background-color linear 0.2s, color linear 0.2s, border linear 0.2s;
+}
+
+.basket-order-button:hover {
+    border: var(--blue-button-hover) solid 2px;
+    background-color: var(--white);
+    color: var(--blue-button-hover);
+}
+
+#basket-picture-of-the-card {
+    height: 75%;
+    width: 11%;
+    margin: 1rem 0 0 0.8rem;
+}
+
+#basket-card-name {
+    color: var(--blue-button-hover);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.5rem 0 0 0.8rem;
+}
+
+#basket-author {
+    color: var(--first-basket-text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.81rem;
+    font-weight: 400;
+    line-height: 1.21rem;
+}
+
+.cash-and-urn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 1rem 2rem;
+}
+
+.cash {
+    color: var(--blue-button-hover);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.urn {
+    margin: 1rem 0 0 0;
+    height: 25%;
+    width: auto;
+    transition: transform 0.2s linear;
+    cursor: pointer;
+}
+
+.urn:hover {
+    transform: scale(1.1);
+}
+
+#basket {
+    margin: 0;
+    padding: 0;
+}
+
+#general-basket-div {
+    background-color: #FAFAFA;
+}
+
+.change-quantity-container {
+    margin: 0 0 0 -12rem;
+    display: flex;
+}
+
+.arrow-right {
+    transform: scaleX(-1);
+    transition: transform 0.2s linear;
+}
+
+.arrow-left {
+    transition: transform 0.2s linear;
+}
+
+.current-number-books {
+    align-self: center;
+    font-size: 1.6rem;
+    margin: -0.3rem 0 0 0;
+}
