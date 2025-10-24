@@ -163,6 +163,8 @@ export const UIModule = (() => {
             addBookContainer.appendChild(li);
         }
         basketElement.appendChild(addBookContainer);
+
+        changeNumberOfBooks();
         
         const subtotalCashNumber = CartModule.calculateSubtotal(basket);
         subtotalCash.textContent = `₹${subtotalCashNumber.toFixed(2)}`;
@@ -170,6 +172,12 @@ export const UIModule = (() => {
         const needForFreeShipping = 500;
         const shippingCost = 80;
         const freeShipping = 0;
+
+        if (subtotalCashNumber > needForFreeShipping) {
+            shippingCash.textContent = `₹${freeShipping}`;
+        } else {
+            textAboutShipping.style.display = 'block';
+        }
 
         if (subtotalCashNumber < needForFreeShipping && basket.length !== 0) {
             shippingCash.textContent = `₹${shippingCost}`;
@@ -187,8 +195,6 @@ export const UIModule = (() => {
             finalCost.textContent = `₹${freeShipping}`;
             textAboutShipping.style.display = 'none';
         }
-
-        changeNumberOfBooks();
     }
 
     const showBlackStars = (score) => {

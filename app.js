@@ -72,8 +72,6 @@ export const AppModule = (() => {
                 }
             }
         });
-
-        UIModule.changeNumberOfBooks();
     };
 
     return { init };
