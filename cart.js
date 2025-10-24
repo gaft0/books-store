@@ -71,7 +71,7 @@ export const CartModule = (() => {
     }
 
     const calculateSubtotal = (basket) => {
-        return basket.reduce((sum, book) => sum + book.price, 0);
+        return basket.reduce((sum, book) => sum + book.price * book.quantity, 0);
     };
 
     const searchBooks = (booksArray, currentInput) => {
@@ -93,5 +93,33 @@ export const CartModule = (() => {
         return uniqueMatches;
     }
 
-    return { getLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal, searchBooks };
+    const basketIncreaseQuantity = (bookId) => {
+        const basket = getLocalStorageBasket();
+        const searchBook = basket.find(book => book.id === bookId);
+
+        if (searchBook) {
+            searchBook.quantity++;
+        }
+        setLocalStorageBasket(basket);
+
+        return basket;
+    }
+
+    const basketDecreaseQuantity = (bookId) => {
+        const basket = getLocalStorageBasket();
+        const searchBook = basket.find(book => book.id === bookId);
+
+        if (searchBook) {
+            searchBook.quantity--;
+            if (searchBook.quantity === 0) {
+                removeFromBasket(bookId);
+                return getLocalStorageBasket();
+            }
+        }
+
+        setLocalStorageBasket(basket);
+        return basket;
+    }
+
+    return { getLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal, searchBooks, basketIncreaseQuantity, basketDecreaseQuantity };
 })();

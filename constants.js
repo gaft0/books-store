@@ -15,6 +15,6 @@ export const SELECTORS = {
     total: 'total',
     urn: '.urn',
     basketOrderPromotion: '.basket-order-promotion',
-    arrowLeft: '.arrow-left',
-    arrowRight: '.arrow-right',
+    removeBook: '.remove-book',
+    addBook: '.add-book',
 };

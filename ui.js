@@ -118,7 +118,10 @@ export const UIModule = (() => {
         basketElement.innerHTML = '';
 
         if (basketCounter) {
-            basketCounter.textContent = `${basket.length} items`;
+            const totalItems = basket.reduce((sum, book) => {
+                return sum + book.quantity;
+            }, 0);
+            basketCounter.textContent = `${totalItems} items`;
         }
     
         const subtotalCash = document.getElementById(SELECTORS.subtotal);
@@ -148,12 +151,12 @@ export const UIModule = (() => {
                         </div>
                     </div>
                     <div class="change-quantity-container">
-                        <button class="arrow-right">-</button>
-                        <span class="current-number-books">1</span>
-                        <button class="arrow-left">+</button>
+                        <button class="remove-book" data-book-id="${basket[i].id}">-</button>
+                        <span class="current-number-books">${basket[i].quantity}</span>
+                        <button class="add-book" data-book-id="${basket[i].id}">+</button>
                     </div>
                     <div class="cash-and-urn-container">
-                        <div class="cash">₹${basket[i].price.toFixed(2)}</div>
+                        <div class="cash">₹${(basket[i].price * basket[i].quantity).toFixed(2)}</div>
                         <img src="assets/urn.svg" alt="Urn" class="urn" data-book-id="${basket[i].id}">
                     </div>
             `;
@@ -171,19 +174,21 @@ export const UIModule = (() => {
         if (subtotalCashNumber < needForFreeShipping && basket.length !== 0) {
             shippingCash.textContent = `₹${shippingCost}`;
 
-            textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${needForFreeShipping - subtotalCashNumber} 
+            textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${Math.round((needForFreeShipping - subtotalCashNumber) * 100) / 100}
             more to get <span class="basket-order-promotion-second-weight">FREE Shipping!</span></div>`;
 
             finalCost.textContent = `₹${Math.round((subtotalCashNumber + shippingCost) * 100) / 100}`;
         } else if (basket.length !== 0) {
             textAboutShipping.style.display = 'none';
-            finalCost.textContent = `₹${subtotalCashNumber}`;
+            finalCost.textContent = `₹${subtotalCashNumber.toFixed(2)}`;
         } else {
             subtotalCash.textContent = `₹${freeShipping}`;
             shippingCash.textContent = `₹${freeShipping}`;
             finalCost.textContent = `₹${freeShipping}`;
             textAboutShipping.style.display = 'none';
         }
+
+        changeNumberOfBooks();
     }
 
     const showBlackStars = (score) => {
@@ -202,16 +207,26 @@ export const UIModule = (() => {
     }
 
     const changeNumberOfBooks = () => {
-        const leftArrow = document.querySelector(SELECTORS.arrowLeft);
-        const rightArrow = document.querySelector(SELECTORS.arrowRight);
+        const removeBook = document.querySelectorAll(SELECTORS.removeBook);
+        const addBook = document.querySelectorAll(SELECTORS.addBook);
 
-        leftArrow.addEventListener('click', (event) => {
-            const buttonLeftArrow = event.target.closest(SELECTORS.arrowLeft);
-        });
+        removeBook.forEach(removeBook => {
+            removeBook.addEventListener('click', () => {
+                const currentID = parseInt(removeBook.getAttribute('data-book-id'));
+                CartModule.basketDecreaseQuantity(currentID);
+                CartModule.updateBasketCounter();
+                renderBasket();
+            });
+        })
 
-        rightArrow.addEventListener('click', (event) => {
-            const buttonRightArrow = event.target.closest(SELECTORS.arrowRight);
-        });
+        addBook.forEach(addBook => {
+            addBook.addEventListener('click', () => {
+                const currentID = parseInt(addBook.getAttribute('data-book-id'));
+                CartModule.basketIncreaseQuantity(currentID);
+                CartModule.updateBasketCounter();
+                renderBasket();
+            });
+        })
     }
 
     return { showCurrentCategories, renderCategories, renderSearchBooks, renderBasket, changeNumberOfBooks };
