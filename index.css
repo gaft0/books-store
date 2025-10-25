@@ -365,3 +365,130 @@
 .third-section-title-second-color, .first-section-title-second-color {
     color: #6366F1;
 }
+
+@media (max-width: 1200px) {
+
+.first-section-container {
+    max-width: 1200px;    
+}
+
+.title {
+    padding: 1.15rem 0 1rem 3.95rem;
+    font-size: 2.7rem;
+}
+
+.first-section-text {
+    font-size: 0.9rem;
+}
+
+.search-container {
+    width: 16rem;
+    margin: 0 0 3rem 3.95rem;
+}
+
+.fan-of-picture-container {
+    margin: 1.2rem 13rem 0 0rem;
+    width: 10rem;
+}
+
+.fan-of-picture {
+    max-width: 14rem;
+}
+
+.result-search-container {
+    margin: 1.5rem 5rem 0 5rem;
+    width: 23rem;
+}
+
+.second-section-container {
+    max-width: 1200px;   
+}
+
+.tape-of-cards-container {
+    margin: 0 3.5rem;
+}
+
+.card-container {
+    height: 24rem;    
+    width: 14rem;
+}
+
+.picture-of-the-card {
+    max-width: 12rem;
+}
+
+.card-text-container {
+    font-size: 1rem;
+}
+
+.author {
+    font-size: 0.8rem;
+}
+
+.description-card {
+    font-size: 0.7rem;
+}
+
+.black-button {
+    height: 2rem;
+    width: 12rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.black-button-text {
+    font-size: 0.7rem;
+}
+
+.third-section-container {
+    max-width: 1200px;
+}
+
+.favorite-book {
+    max-width: 26rem;
+    margin: 0 0 4rem 3.95rem;
+}
+
+.third-section-text-container {
+    width: 30rem;
+}
+
+.third-section-text {
+    font-size: 0.9rem;
+}
+
+.third-section-title {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.statistics-container {
+    margin: 0.9rem 0 0 0;
+}
+
+.statistics-number {
+    font-size: 1.2rem;
+}
+
+.statistics {
+    font-size: 0.9rem;
+    margin: 1rem 2rem 0 0;
+}
+
+.fourth-section-container {
+    max-width: 1200px;
+}
+
+.award {
+    max-width: 15rem;
+    margin: 0 1rem 0 0;
+}
+
+#third-section-button {
+    display: none;
+}
+
+#explore-search-container {
+    max-width: 25rem;
+}
+
+}

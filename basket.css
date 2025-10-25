@@ -214,7 +214,7 @@
 }
 
 #basket {
-    margin: 0;
+    margin: 0 0 3rem 0;
     padding: 0;
 }
 
@@ -255,4 +255,44 @@
     padding: 0rem 0.6rem;
     min-width: 2rem;
     text-align: center;
+}
+
+@media (max-width: 1200px) {
+
+.basket-section-container {
+    max-width: 1200px; 
+}
+
+.basket-order-container {
+    width: 15rem;
+    margin: -2.5rem 0 2rem 3rem;
+}
+
+.basket-cart-container {
+    width: 26.5rem;
+    background-color: var(--white);
+}
+
+.change-quantity-container {
+    margin: 0 0 0 -10rem;
+    display: flex;
+}
+
+.cash-and-urn-container {
+    margin: 0 0 1rem 0.5rem;
+}
+
+.current-number-books {
+    padding: 0;
+    font-size: 1.3rem;
+}
+
+.add-book, .remove-book {
+    font-size: 1.1rem;
+}
+
+.urn {
+    margin: 1rem 0 0 0.9rem;
+}
+
 }
