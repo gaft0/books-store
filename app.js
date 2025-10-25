@@ -10,6 +10,7 @@ export const AppModule = (() => {
     const init = () => {
         if (document.querySelector(SELECTORS.bestSellerBooks) && document.querySelector(SELECTORS.newReleases)) {
             UIModule.showCurrentCategories(booksArray);
+            CartModule.rerenderButton();
         }
         if (document.querySelector(SELECTORS.basket)) {
             UIModule.renderBasket();
@@ -54,6 +55,7 @@ export const AppModule = (() => {
                 if (book) {
                     CartModule.addToBasket(book);
                     CartModule.updateBasketCounter();
+                    CartModule.rerenderButton();
                     if (document.querySelector(SELECTORS.basket)) {
                         UIModule.renderBasket();
                     }
@@ -65,6 +67,7 @@ export const AppModule = (() => {
                 const bookId = Number(urn.getAttribute('data-book-id'));
 
                 CartModule.removeFromBasket(bookId);
+                CartModule.rerenderButton();
                 CartModule.updateBasketCounter();
 
                 if (document.querySelector(SELECTORS.basket)) {

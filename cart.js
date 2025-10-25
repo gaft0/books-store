@@ -121,5 +121,24 @@ export const CartModule = (() => {
         return basket;
     }
 
-    return { getLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal, searchBooks, basketIncreaseQuantity, basketDecreaseQuantity };
+    const rerenderButton = () => {
+        const updateButton = document.querySelectorAll('.black-button');
+        const basket = getLocalStorageBasket();
+
+        updateButton.forEach (button => {
+            const bookID = button.getAttribute('data-book-id');
+            const check = basket.find(book => book.id === parseInt(bookID));
+
+            if (check) {
+                button.innerHTML = `<span class="black-button-text">Book added</span>`;
+            } else {
+                button.innerHTML = `
+                    <img src="assets/card-basket.svg">
+                    <span class="black-button-text">Add To Cart</span>
+                `;
+            }
+        });
+    }
+
+    return { getLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal, searchBooks, basketIncreaseQuantity, basketDecreaseQuantity, rerenderButton };
 })();

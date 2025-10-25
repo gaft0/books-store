@@ -195,6 +195,8 @@ export const UIModule = (() => {
             finalCost.textContent = `₹${freeShipping}`;
             textAboutShipping.style.display = 'none';
         }
+
+        CartModule.rerenderButton();
     }
 
     const showBlackStars = (score) => {
