@@ -220,7 +220,7 @@ export const UIModule = (() => {
 
         removeBook.forEach(removeBook => {
             removeBook.addEventListener('click', () => {
-                const currentID = parseInt(removeBook.getAttribute('data-book-id'));
+                const currentID = removeBook.getAttribute('data-book-id');
                 CartModule.basketDecreaseQuantity(currentID);
                 CartModule.updateBasketCounter();
                 renderBasket();
@@ -229,7 +229,7 @@ export const UIModule = (() => {
 
         addBook.forEach(addBook => {
             addBook.addEventListener('click', () => {
-                const currentID = parseInt(addBook.getAttribute('data-book-id'));
+                const currentID = addBook.getAttribute('data-book-id');
                 CartModule.basketIncreaseQuantity(currentID);
                 CartModule.updateBasketCounter();
                 renderBasket();

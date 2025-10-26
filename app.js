@@ -5,9 +5,8 @@ import { SELECTORS } from './constants.js';
 import { CartModule } from './cart.js';
 
 export const AppModule = (() => {
-    const booksArray = DataModule.getBooks();
-
-    const init = () => {
+    const init = async () => {
+        const booksArray = await DataModule.getBooks();
         if (document.querySelector(SELECTORS.bestSellerBooks) && document.querySelector(SELECTORS.newReleases)) {
             UIModule.showCurrentCategories(booksArray);
             CartModule.rerenderButton();
@@ -64,7 +63,7 @@ export const AppModule = (() => {
 
             const urn = event.target.closest(SELECTORS.urn);
             if (urn) {
-                const bookId = Number(urn.getAttribute('data-book-id'));
+                const bookId = urn.getAttribute('data-book-id');
 
                 CartModule.removeFromBasket(bookId);
                 CartModule.rerenderButton();

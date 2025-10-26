@@ -127,7 +127,7 @@ export const CartModule = (() => {
 
         updateButton.forEach (button => {
             const bookID = button.getAttribute('data-book-id');
-            const check = basket.find(book => book.id === parseInt(bookID));
+            const check = basket.find(book => book.id === bookID);
 
             if (check) {
                 button.innerHTML = `<span class="black-button-text">Book added</span>`;
