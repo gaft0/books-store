@@ -5,13 +5,19 @@ export const UIModule = (() => {
     const showCurrentCategories = (booksArray) => {
         const newReleasesContainer = document.querySelector(SELECTORS.newReleases);
         const bestSellerBooksContainer = document.querySelector(SELECTORS.bestSellerBooks);
+        const topRatedBooksContainer = document.querySelector(SELECTORS.topRatedBooks);
+        const ourSuggestionContainer = document.querySelector(SELECTORS.ourSuggestion);
+        const mostPopularBooksContainer = document.querySelector(SELECTORS.mostPopularBooks);
 
-        if (!newReleasesContainer || !bestSellerBooksContainer) {
+        if (newReleasesContainer && bestSellerBooksContainer && newReleasesContainer && topRatedBooksContainer && ourSuggestionContainer && mostPopularBooksContainer) {
             return;
         }
 
         const renderNewReleases = document.createDocumentFragment();
         const renderBestSellerBooks = document.createDocumentFragment();
+        const renderTopRatedBooks = document.createDocumentFragment();
+        const renderOurSuggestion = document.createDocumentFragment();
+        const renderMostPopularBooks = document.createDocumentFragment();
 
         for (let i = 0; i < booksArray.length; i++) {
             const currentBook = booksArray[i];
@@ -25,13 +31,38 @@ export const UIModule = (() => {
                 case 'Best Seller Books':
                     renderBestSellerBooks.appendChild(li);
                     break;
+                case 'Top Rated Books':
+                    renderTopRatedBooks.appendChild(li);
+                    break;
+                case 'Our Suggestion':
+                    renderOurSuggestion.appendChild(li);
+                    break;
+                case 'Most Popular Books':
+                    renderMostPopularBooks.appendChild(li);
+                    break;
             }
         }
 
-        newReleasesContainer.innerHTML = '';
-        bestSellerBooksContainer.innerHTML = '';
-        newReleasesContainer.appendChild(renderNewReleases);
-        bestSellerBooksContainer.appendChild(renderBestSellerBooks);
+        if(newReleasesContainer) {
+            newReleasesContainer.innerHTML = '';
+            newReleasesContainer.appendChild(renderNewReleases);
+        }
+        if(bestSellerBooksContainer) {
+            bestSellerBooksContainer.innerHTML = '';
+            bestSellerBooksContainer.appendChild(renderBestSellerBooks);
+        }
+        if(topRatedBooksContainer) {
+            topRatedBooksContainer.innerHTML = '';
+            topRatedBooksContainer.appendChild(renderTopRatedBooks);
+        }
+        if(ourSuggestionContainer) {
+            ourSuggestionContainer.innerHTML = '';
+            ourSuggestionContainer.appendChild(renderOurSuggestion);
+        }
+        if(mostPopularBooksContainer) {
+            mostPopularBooksContainer.innerHTML = '';
+            mostPopularBooksContainer.appendChild(renderMostPopularBooks);
+        }
     }
 
     const renderCategories = (currentBook, showStars) => {

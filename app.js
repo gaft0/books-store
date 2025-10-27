@@ -5,9 +5,9 @@ import { SELECTORS } from './constants.js';
 import { CartModule } from './cart.js';
 
 export const AppModule = (() => {
-    const init = async () => {
+    const init = async () => {    
         const booksArray = await DataModule.getBooks();
-        if (document.querySelector(SELECTORS.bestSellerBooks) && document.querySelector(SELECTORS.newReleases)) {
+        if (document.querySelector('.tape-of-cards-container')) {
             UIModule.showCurrentCategories(booksArray);
             CartModule.rerenderButton();
         }
@@ -74,6 +74,11 @@ export const AppModule = (() => {
                 }
             }
         });
+
+        const loader = document.querySelector('.loader');
+        if (loader) {
+            loader.style.display = 'none';
+        }
     };
 
     return { init };

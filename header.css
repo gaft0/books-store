@@ -10,7 +10,7 @@ header {
     background-color: var(--gray);    
     width: 100%;
     position: fixed;
-    z-index: 9999;
+    z-index: 9998;
 }
 
 .header-container {
@@ -76,7 +76,6 @@ h1 {
     display: flex;
     text-align: center;
 }
-
 .basket-icon {
     max-width: 2.06rem;
     width: 100%;
