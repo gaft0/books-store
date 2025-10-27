@@ -130,7 +130,7 @@
 
 .card-container {
     background-color: var(--card-container);
-    height: 28.57rem;    
+    height: 26rem;    
     width: 17rem;
     border-radius: 0.75rem;    
     transition: transform 0.2s linear;
@@ -147,7 +147,7 @@
 .picture-of-the-card {
     border-radius: 0.75rem;
     margin:  0 1rem 0.62rem 1rem;
-    height: 220px;
+    height: 200px;
     width: 100%;
     max-width: 15rem;
 }
