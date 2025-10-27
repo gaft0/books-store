@@ -91,10 +91,15 @@ export const UIModule = (() => {
         `;
     }
 
-    const renderSearchBooks = (booksArray, currentInput, fan, search, resultList, showStars) => {
+    const renderSearchBooks = (booksArray, currentInput, fan, award, search, resultList, showStars) => {
         const resultSearch = CartModule.searchBooks(booksArray, currentInput);
 
-        fan.style.display = 'none';
+        if (fan) {
+            fan.style.display = 'none';
+        }
+        if (award) {
+            award.style.display = 'none';
+        }
         search.style.display = 'block';
         const addBookContainer = document.createDocumentFragment();
 

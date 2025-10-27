@@ -19,10 +19,11 @@ export const AppModule = (() => {
 
         const input = document.querySelector(SELECTORS.searchContainerText); 
         const fan = document.querySelector(SELECTORS.fanOfPictureContainer);
+        const award = document.querySelector(SELECTORS.award);
         const search = document.querySelector(SELECTORS.resultSearchContainer);
         const resultList = document.getElementById(SELECTORS.resultSearch);
 
-        if (input && fan && search && resultList) {
+        if ((award || fan) && input && search && resultList) {
             const debounce = (func, ms) => {
                 let timeout;
                 return function() {
@@ -35,9 +36,14 @@ export const AppModule = (() => {
                 const currentInput = this.value.toLowerCase();
                 
                 if (currentInput !== '') {
-                    UIModule.renderSearchBooks(booksArray, currentInput, fan, search, resultList, CartModule.showStars);
+                    UIModule.renderSearchBooks(booksArray, currentInput, fan, award, search, resultList, CartModule.showStars);
                 } else {
-                    fan.style.display = 'block';
+                    if  (fan) {
+                        fan.style.display = 'block';
+                    }
+                    if  (award) {
+                        award.style.display = 'block';
+                    }
                     search.style.display = 'none';
                 }
             }, 300);
@@ -75,7 +81,7 @@ export const AppModule = (() => {
             }
         });
 
-        const loader = document.querySelector('.loader');
+        const loader = document.querySelector(SELECTORS.loader);
         if (loader) {
             loader.style.display = 'none';
         }

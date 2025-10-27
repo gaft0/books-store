@@ -20,4 +20,6 @@ export const SELECTORS = {
     basketOrderPromotion: '.basket-order-promotion',
     removeBook: '.remove-book',
     addBook: '.add-book',
+    loader: '.loader',
+    award: '.award',
 };
