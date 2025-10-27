@@ -144,7 +144,7 @@
 .picture-of-the-card {
     border-radius: 0.75rem;
     margin:  1rem 1rem 0.62rem 1rem;
-    height: auto;
+    height: 60%;
     width: 100%;
     max-width: 15rem;
 }
