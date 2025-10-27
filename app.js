@@ -7,7 +7,7 @@ import { CartModule } from './cart.js';
 export const AppModule = (() => {
     const init = async () => {    
         const booksArray = await DataModule.getBooks();
-        if (document.querySelector('.tape-of-cards-container')) {
+        if (document.querySelector(SELECTORS.tapeOfCardsContainer)) {
             UIModule.showCurrentCategories(booksArray);
             CartModule.rerenderButton();
         }
@@ -54,7 +54,7 @@ export const AppModule = (() => {
         document.addEventListener('click', (event) => {
             const button = event.target.closest(SELECTORS.blackButton) || event.target.closest(SELECTORS.blackButtonSearch);
             if (button) {
-                const bookId = button.getAttribute('data-book-id');
+                const bookId = button.getAttribute(SELECTORS.dataBookID);
                 const book = booksArray.find(book => book.id == bookId);
                 
                 if (book) {
@@ -69,7 +69,7 @@ export const AppModule = (() => {
 
             const urn = event.target.closest(SELECTORS.urn);
             if (urn) {
-                const bookId = urn.getAttribute('data-book-id');
+                const bookId = urn.getAttribute(SELECTORS.dataBookID);
 
                 CartModule.removeFromBasket(bookId);
                 CartModule.rerenderButton();

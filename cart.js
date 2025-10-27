@@ -2,7 +2,7 @@ import { SELECTORS } from "./constants.js";
 
 export const CartModule = (() => {
     const getLocalStorageBasket = () => {
-        const basketData = localStorage.getItem('basket');
+        const basketData = localStorage.getItem(SELECTORS.basketData);
         if(basketData) {
             return JSON.parse(basketData);
         }
@@ -10,7 +10,7 @@ export const CartModule = (() => {
     }
 
     const setLocalStorageBasket = (basket) => {
-        localStorage.setItem('basket', JSON.stringify(basket));
+        localStorage.setItem(SELECTORS.basketData, JSON.stringify(basket));
     }
 
     const addToBasket = (book) => {
@@ -122,11 +122,11 @@ export const CartModule = (() => {
     }
 
     const rerenderButton = () => {
-        const updateButton = document.querySelectorAll('.black-button');
+        const updateButton = document.querySelectorAll(SELECTORS.blackButton);
         const basket = getLocalStorageBasket();
 
         updateButton.forEach (button => {
-            const bookID = button.getAttribute('data-book-id');
+            const bookID = button.getAttribute(SELECTORS.dataBookID);
             const check = basket.find(book => book.id === bookID);
 
             if (check) {

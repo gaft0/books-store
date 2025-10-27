@@ -22,4 +22,7 @@ export const SELECTORS = {
     addBook: '.add-book',
     loader: '.loader',
     award: '.award',
+    basketData: 'basket',
+    tapeOfCardsContainer: '.tape-of-cards-container',
+    dataBookID: 'data-book-id',
 };
