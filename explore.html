@@ -12,15 +12,16 @@
     <title>Books Store | gaft0</title>
 </head>
 <body>
+    <div class="loader"></div>
     <div class="general-div">
         <header class="explore-header">
             <div class="header-container">
-                <h1>Books</h1>
+                <button onclick="location.href='index.html'"><h1>Books</h1></button>
                 <div class="header-container-nav">
                     <nav>
                         <ul class="header-nav">
                             <li class="header-list-element"><button class="header-button" onclick="location.href='index.html'">HOME</button></li>
-                            <li class="header-list-element"><button class="header-button" onclick="location.href='explore.html'">EXPLORE</button></li>
+                            <li class="header-list-element"><button class="header-button">EXPLORE</button></li>
                             <li class="header-list-element"><button class="header-button" onclick="location.href='error-page.html'">SHOP</button></li>
                             <li class="header-list-element"><button class="header-button" onclick="location.href='error-page.html'">SELL YOUR BOOK</button></li>
                         </ul>
@@ -43,29 +44,30 @@
                         </div>
                     </div>
                     <img src="assets/books.png" alt="Books" class="award">
+                    <div class="result-search-container" id="result-search"></div>
                 </div>   
             </section>
             <section class="second-section-container">
                 <div class="second-section-title">New Releases</div>
-                <ul class="tape-of-cards-container">
+                <ul class="tape-of-cards-container" id="new-releases">
 
                 </ul>
             </section>
             <section class="second-section-container">
                 <div class="second-section-title">Top Rated Books</div>
-                <ul class="tape-of-cards-container">
+                <ul class="tape-of-cards-container" id="top-rated-books">
 
                 </ul>
             </section>
             <section class="second-section-container">
                 <div class="second-section-title">Our Suggestion</div>
-                <ul class="tape-of-cards-container">
+                <ul class="tape-of-cards-container" id="our-suggestion">
 
                 </ul>
             </section>
             <section class="second-section-container">
                 <div class="second-section-title">Most Popular Books</div>
-                <ul class="tape-of-cards-container">
+                <ul class="tape-of-cards-container" id="most-popular-books">
 
                 </ul>
             </section>

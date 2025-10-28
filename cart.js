@@ -2,7 +2,7 @@ import { SELECTORS } from "./constants.js";
 
 export const CartModule = (() => {
     const getLocalStorageBasket = () => {
-        const basketData = localStorage.getItem('basket');
+        const basketData = localStorage.getItem(SELECTORS.basketData);
         if(basketData) {
             return JSON.parse(basketData);
         }
@@ -10,7 +10,7 @@ export const CartModule = (() => {
     }
 
     const setLocalStorageBasket = (basket) => {
-        localStorage.setItem('basket', JSON.stringify(basket));
+        localStorage.setItem(SELECTORS.basketData, JSON.stringify(basket));
     }
 
     const addToBasket = (book) => {
@@ -71,7 +71,7 @@ export const CartModule = (() => {
     }
 
     const calculateSubtotal = (basket) => {
-        return basket.reduce((sum, book) => sum + book.price, 0);
+        return basket.reduce((sum, book) => sum + book.price * book.quantity, 0);
     };
 
     const searchBooks = (booksArray, currentInput) => {
@@ -93,5 +93,52 @@ export const CartModule = (() => {
         return uniqueMatches;
     }
 
-    return { getLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal, searchBooks };
+    const basketIncreaseQuantity = (bookId) => {
+        const basket = getLocalStorageBasket();
+        const searchBook = basket.find(book => book.id === bookId);
+
+        if (searchBook) {
+            searchBook.quantity++;
+        }
+        setLocalStorageBasket(basket);
+
+        return basket;
+    }
+
+    const basketDecreaseQuantity = (bookId) => {
+        const basket = getLocalStorageBasket();
+        const searchBook = basket.find(book => book.id === bookId);
+
+        if (searchBook) {
+            searchBook.quantity--;
+            if (searchBook.quantity === 0) {
+                removeFromBasket(bookId);
+                return getLocalStorageBasket();
+            }
+        }
+
+        setLocalStorageBasket(basket);
+        return basket;
+    }
+
+    const rerenderButton = () => {
+        const updateButton = document.querySelectorAll(SELECTORS.blackButton);
+        const basket = getLocalStorageBasket();
+
+        updateButton.forEach (button => {
+            const bookID = button.getAttribute(SELECTORS.dataBookID);
+            const check = basket.find(book => book.id === bookID);
+
+            if (check) {
+                button.innerHTML = `<span class="black-button-text">Book added</span>`;
+            } else {
+                button.innerHTML = `
+                    <img src="assets/card-basket.svg">
+                    <span class="black-button-text">Add To Cart</span>
+                `;
+            }
+        });
+    }
+
+    return { getLocalStorageBasket, addToBasket, updateBasketCounter, showStars, removeFromBasket, calculateSubtotal, searchBooks, basketIncreaseQuantity, basketDecreaseQuantity, rerenderButton };
 })();

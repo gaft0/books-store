@@ -5,13 +5,19 @@ export const UIModule = (() => {
     const showCurrentCategories = (booksArray) => {
         const newReleasesContainer = document.querySelector(SELECTORS.newReleases);
         const bestSellerBooksContainer = document.querySelector(SELECTORS.bestSellerBooks);
+        const topRatedBooksContainer = document.querySelector(SELECTORS.topRatedBooks);
+        const ourSuggestionContainer = document.querySelector(SELECTORS.ourSuggestion);
+        const mostPopularBooksContainer = document.querySelector(SELECTORS.mostPopularBooks);
 
-        if (!newReleasesContainer || !bestSellerBooksContainer) {
+        if (newReleasesContainer && bestSellerBooksContainer && newReleasesContainer && topRatedBooksContainer && ourSuggestionContainer && mostPopularBooksContainer) {
             return;
         }
 
         const renderNewReleases = document.createDocumentFragment();
         const renderBestSellerBooks = document.createDocumentFragment();
+        const renderTopRatedBooks = document.createDocumentFragment();
+        const renderOurSuggestion = document.createDocumentFragment();
+        const renderMostPopularBooks = document.createDocumentFragment();
 
         for (let i = 0; i < booksArray.length; i++) {
             const currentBook = booksArray[i];
@@ -25,13 +31,38 @@ export const UIModule = (() => {
                 case 'Best Seller Books':
                     renderBestSellerBooks.appendChild(li);
                     break;
+                case 'Top Rated Books':
+                    renderTopRatedBooks.appendChild(li);
+                    break;
+                case 'Our Suggestion':
+                    renderOurSuggestion.appendChild(li);
+                    break;
+                case 'Most Popular Books':
+                    renderMostPopularBooks.appendChild(li);
+                    break;
             }
         }
 
-        newReleasesContainer.innerHTML = '';
-        bestSellerBooksContainer.innerHTML = '';
-        newReleasesContainer.appendChild(renderNewReleases);
-        bestSellerBooksContainer.appendChild(renderBestSellerBooks);
+        if(newReleasesContainer) {
+            newReleasesContainer.innerHTML = '';
+            newReleasesContainer.appendChild(renderNewReleases);
+        }
+        if(bestSellerBooksContainer) {
+            bestSellerBooksContainer.innerHTML = '';
+            bestSellerBooksContainer.appendChild(renderBestSellerBooks);
+        }
+        if(topRatedBooksContainer) {
+            topRatedBooksContainer.innerHTML = '';
+            topRatedBooksContainer.appendChild(renderTopRatedBooks);
+        }
+        if(ourSuggestionContainer) {
+            ourSuggestionContainer.innerHTML = '';
+            ourSuggestionContainer.appendChild(renderOurSuggestion);
+        }
+        if(mostPopularBooksContainer) {
+            mostPopularBooksContainer.innerHTML = '';
+            mostPopularBooksContainer.appendChild(renderMostPopularBooks);
+        }
     }
 
     const renderCategories = (currentBook, showStars) => {
@@ -60,10 +91,15 @@ export const UIModule = (() => {
         `;
     }
 
-    const renderSearchBooks = (booksArray, currentInput, fan, search, resultList, showStars) => {
+    const renderSearchBooks = (booksArray, currentInput, fan, award, search, resultList, showStars) => {
         const resultSearch = CartModule.searchBooks(booksArray, currentInput);
 
-        fan.style.display = 'none';
+        if (fan) {
+            fan.style.display = 'none';
+        }
+        if (award) {
+            award.style.display = 'none';
+        }
         search.style.display = 'block';
         const addBookContainer = document.createDocumentFragment();
 
@@ -118,7 +154,10 @@ export const UIModule = (() => {
         basketElement.innerHTML = '';
 
         if (basketCounter) {
-            basketCounter.textContent = `${basket.length} items`;
+            const totalItems = basket.reduce((sum, book) => {
+                return sum + book.quantity;
+            }, 0);
+            basketCounter.textContent = `${totalItems} items`;
         }
     
         const subtotalCash = document.getElementById(SELECTORS.subtotal);
@@ -148,18 +187,20 @@ export const UIModule = (() => {
                         </div>
                     </div>
                     <div class="change-quantity-container">
-                        <button><img src="assets/arrow.svg" alt="Left arrow" class="arrow-right"></button>
-                        <span class="current-number-books">1</span>
-                        <button><img src="assets/arrow.svg" alt="Right arrow" class="arrow-left"></button>
+                        <button class="remove-book" data-book-id="${basket[i].id}">-</button>
+                        <span class="current-number-books">${basket[i].quantity}</span>
+                        <button class="add-book" data-book-id="${basket[i].id}">+</button>
                     </div>
                     <div class="cash-and-urn-container">
-                        <div class="cash">₹${basket[i].price.toFixed(2)}</div>
+                        <div class="cash">₹${(basket[i].price * basket[i].quantity).toFixed(2)}</div>
                         <img src="assets/urn.svg" alt="Urn" class="urn" data-book-id="${basket[i].id}">
                     </div>
             `;
             addBookContainer.appendChild(li);
         }
         basketElement.appendChild(addBookContainer);
+
+        changeNumberOfBooks();
         
         const subtotalCashNumber = CartModule.calculateSubtotal(basket);
         subtotalCash.textContent = `₹${subtotalCashNumber.toFixed(2)}`;
@@ -168,22 +209,30 @@ export const UIModule = (() => {
         const shippingCost = 80;
         const freeShipping = 0;
 
+        if (subtotalCashNumber > needForFreeShipping) {
+            shippingCash.textContent = `₹${freeShipping}`;
+        } else {
+            textAboutShipping.style.display = 'block';
+        }
+
         if (subtotalCashNumber < needForFreeShipping && basket.length !== 0) {
             shippingCash.textContent = `₹${shippingCost}`;
 
-            textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${needForFreeShipping - subtotalCashNumber} 
+            textAboutShipping.innerHTML = `<div class="basket-order-promotion">Spend ₹${Math.round((needForFreeShipping - subtotalCashNumber) * 100) / 100}
             more to get <span class="basket-order-promotion-second-weight">FREE Shipping!</span></div>`;
 
             finalCost.textContent = `₹${Math.round((subtotalCashNumber + shippingCost) * 100) / 100}`;
         } else if (basket.length !== 0) {
             textAboutShipping.style.display = 'none';
-            finalCost.textContent = `₹${subtotalCashNumber}`;
+            finalCost.textContent = `₹${subtotalCashNumber.toFixed(2)}`;
         } else {
             subtotalCash.textContent = `₹${freeShipping}`;
             shippingCash.textContent = `₹${freeShipping}`;
             finalCost.textContent = `₹${freeShipping}`;
             textAboutShipping.style.display = 'none';
         }
+
+        CartModule.rerenderButton();
     }
 
     const showBlackStars = (score) => {
@@ -202,16 +251,26 @@ export const UIModule = (() => {
     }
 
     const changeNumberOfBooks = () => {
-        const leftArrow = document.querySelector(SELECTORS.arrowLeft);
-        const rightArrow = document.querySelector(SELECTORS.arrowRight);
+        const removeBook = document.querySelectorAll(SELECTORS.removeBook);
+        const addBook = document.querySelectorAll(SELECTORS.addBook);
 
-        leftArrow.addEventListener('click', (event) => {
-            const buttonLeftArrow = event.target.closest(SELECTORS.arrowLeft);
-        });
+        removeBook.forEach(removeBook => {
+            removeBook.addEventListener('click', () => {
+                const currentID = removeBook.getAttribute(SELECTORS.dataBookID);
+                CartModule.basketDecreaseQuantity(currentID);
+                CartModule.updateBasketCounter();
+                renderBasket();
+            });
+        })
 
-        rightArrow.addEventListener('click', (event) => {
-            const buttonRightArrow = event.target.closest(SELECTORS.arrowRight);
-        });
+        addBook.forEach(addBook => {
+            addBook.addEventListener('click', () => {
+                const currentID = addBook.getAttribute(SELECTORS.dataBookID);
+                CartModule.basketIncreaseQuantity(currentID);
+                CartModule.updateBasketCounter();
+                renderBasket();
+            });
+        })
     }
 
     return { showCurrentCategories, renderCategories, renderSearchBooks, renderBasket, changeNumberOfBooks };

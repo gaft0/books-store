@@ -187,7 +187,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 0 1rem 2rem;
+    margin: 0 0 1rem 8rem;
 }
 
 .cash {
@@ -196,10 +196,13 @@
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.5rem;
+    max-height: 0.9rem;
+    max-width: 1rem;
+    text-align: center;
 }
 
 .urn {
-    margin: 1rem 0 0 0;
+    margin: 1rem 0 0 1.2rem;
     height: 25%;
     width: auto;
     transition: transform 0.2s linear;
@@ -211,7 +214,7 @@
 }
 
 #basket {
-    margin: 0;
+    margin: 0 0 3rem 0;
     padding: 0;
 }
 
@@ -220,21 +223,76 @@
 }
 
 .change-quantity-container {
-    margin: 0 0 0 -12rem;
+    margin: 0 0 0 -20rem;
     display: flex;
 }
 
-.arrow-right {
-    transform: scaleX(-1);
+.add-book, .remove-book {
     transition: transform 0.2s linear;
+    font-size: 1.3rem;
+    border: 0.01rem solid var(--dark-text);
+    border-radius: 50%;
+    align-self: center;
+    padding: 0 0.4rem;
 }
 
-.arrow-left {
-    transition: transform 0.2s linear;
+.remove-book {
+    padding: 0 0.5rem;
+}
+
+.add-book:hover, .remove-book:hover {
+    transform: scale(1.1);
 }
 
 .current-number-books {
     align-self: center;
-    font-size: 1.6rem;
     margin: -0.3rem 0 0 0;
+    color: var(--dark-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    padding: 0rem 0.6rem;
+    min-width: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+
+.basket-section-container {
+    max-width: 1200px; 
+}
+
+.basket-order-container {
+    width: 15rem;
+    margin: -2.5rem 0 2rem 3rem;
+}
+
+.basket-cart-container {
+    width: 26.5rem;
+    background-color: var(--white);
+}
+
+.change-quantity-container {
+    margin: 0 0 0 -10rem;
+    display: flex;
+}
+
+.cash-and-urn-container {
+    margin: 0 0 1rem 0.5rem;
+}
+
+.current-number-books {
+    padding: 0;
+    font-size: 1.3rem;
+}
+
+.add-book, .remove-book {
+    font-size: 1.1rem;
+}
+
+.urn {
+    margin: 1rem 0 0 0.9rem;
+}
+
 }
